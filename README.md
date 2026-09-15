@@ -1,4 +1,4 @@
-# [SIGLA/Nome do projeto] - [Descricao curta do projeto, ate 80 caracteres]
+# Plataforma de Estudos - Plataforma web para apoiar alunos e professores
 
 Template para Trabalhos Interdisciplinares (TI) do curso de Ciencia da Computacao. Este repositorio deve ser clonado e preenchido conforme as orientacoes de cada disciplina.
 
@@ -9,44 +9,50 @@ Template para Trabalhos Interdisciplinares (TI) do curso de Ciencia da Computaca
 
 ## Informacoes gerais
 
-* **Disciplina:** [Ex.: TI I, TI II, TI III]
-* **Ano/Semestre:** [Ex.: 2026/1, 2026/2]
+* **Disciplina:** TI II
+* **Ano/Semestre:** 2026/2
 
 ## Alunos integrantes da equipe
 
-* Nome completo do aluno 1
-* Nome completo do aluno 2
-* Nome completo do aluno 3
-* Nome completo do aluno 4
+* Gabriela Schaper Soriano Veiga
+* Gustavo Norberto Medeiros de Souza
+* Lucas Marçal Vilela
+* Matheus Romling Rotheia Almeida
+* Renato Teixeira Miranda Guimarães
 
 ## Professores responsáveis
 
-* Nome completo do professor 1
-* Nome completo do professor 2
+* Marcos André Silveira Kutova
+* Rommel Vieira Carneiro
 
 ## Resumo
 
-[Escreva um ou dois paragrafos resumindo o objetivo do seu projeto.]
+A Plataforma de Estudos é uma aplicação web desenvolvida para auxiliar alunos e professores na organização e acompanhamento das atividades acadêmicas. A plataforma permite o gerenciamento de tarefas, turmas, grupos e notas, além de disponibilizar recursos de acompanhamento do progresso dos alunos.
+Para os alunos, a plataforma também oferece um sistema de gamificação baseado em pontos, conquistas e sequência de estudos, permitindo utilizar os pontos acumulados em uma loja de cosméticos integrada ao perfil. Para os professores, são disponibilizados recursos para criação e acompanhamento de tarefas e gerenciamento de turmas e grupos.
 
 ## Problema
 
-[Descreva o problema investigado ou resolvido pelo projeto. Explique a necessidade, oportunidade ou desafio identificado.]
+Alunos e professores precisam lidar com diferentes atividades e informações relacionadas ao ambiente acadêmico, como tarefas, turmas, grupos, notas e acompanhamento dos estudos. A ausência de um ambiente centralizado pode dificultar a organização dessas informações e o acompanhamento da rotina acadêmica.
+Além disso, o projeto considera a necessidade de incentivar a participação e a continuidade dos estudos por meio de recursos de gamificação. Por isso, a plataforma busca reunir, em um único ambiente, ferramentas de organização acadêmica e mecanismos de acompanhamento do progresso dos alunos.
 
 ## Solucao proposta
 
-[Explique a solucao computacional proposta. Informe se o projeto e uma aplicacao, algoritmo, modelo, sistema, plataforma, jogo, ferramenta, analise de dados ou experimento computacional.]
+A solução proposta consiste no desenvolvimento de uma aplicação web de estudos que reúne, em um único ambiente, funcionalidades voltadas para alunos e professores. A plataforma disponibiliza recursos como calendário, gerenciamento e acompanhamento de tarefas, turmas, grupos e notas, permitindo que os usuários organizem e acompanhem suas atividades acadêmicas.
+Para os alunos, a solução também conta com recursos de gamificação, como pontos, conquistas e sequência de estudos. Os pontos acumulados podem ser utilizados na loja de cosméticos integrada à plataforma. Já os professores possuem recursos relacionados ao gerenciamento de turmas e ao acompanhamento das tarefas e atividades dos alunos.
 
 ## Arquitetura da solucao
 
-[Descreva os principais componentes da solucao: frontend, backend, banco de dados, APIs, servicos externos, algoritmos, modelos, pipelines, modulos ou integracoes. Inclua diagramas quando aplicavel.]
+A solução é estruturada como uma aplicação web, tendo como principal componente a interface front-end, responsável pela interação dos usuários com a plataforma.
+A interface é organizada de acordo com os perfis de aluno e professor, disponibilizando funcionalidades como calendário, tarefas, turmas, grupos, notas e perfil. O perfil do aluno também integra recursos de gamificação, como pontos, conquistas e sequência de estudos, além da loja de cosméticos. O perfil do professor disponibiliza informações profissionais e recursos relacionados às suas turmas e atividades.
+A arquitetura dos componentes de back-end, banco de dados, APIs e demais integrações será definida conforme o desenvolvimento da aplicação.
 
 ## Tecnologias utilizadas
 
-* **Linguagens:** [Ex.: Python, Java, JavaScript, TypeScript, C, C++]
-* **Frameworks/Bibliotecas:** [Ex.: React, Node.js, Django, Flask, Spring, TensorFlow, PyTorch]
-* **Banco de dados:** [Ex.: PostgreSQL, MySQL, MongoDB, SQLite]
-* **Ferramentas:** [Ex.: Git, Docker, Figma, VS Code]
-
+* **Linguagens:** HTML, CSS, JavaScript
+* **Frameworks/Bibliotecas:** A definir
+* **Banco de dados:** A definir
+* **Ferramentas:** Git, GitHub, Figma, VS Code, Miro
+  
 ## Instruções de utilização
 
 > **IMPORTANTE: APAGUE ESSA SEÇÃO DE INSTRUÇÕES ANTES DE ENTREGAR SEU TRABALHO**
