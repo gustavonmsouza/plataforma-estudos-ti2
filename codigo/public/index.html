@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TI2 - Front End | Home</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <img src="./assets/images/banner_ti.png" alt="" />
+      </div>
+      <div class="barra-info">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+          </ul>
+        </nav>
+        <div class="dados-usuario">
+          <a href="home.html">Minha conta</a>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+        <h3>Boas-vindas</h3>
+        <p>Esta é a home-page de exemplo do template do projeto de <strong>Trabalho Interdisciplinar 2 - Front End</strong>.</p>
+        <p>Este conteúdo foi criado para exemplificar como montar o seu site integrado ao back end baseado em JSON Server e, opcionalmente, ao módulo de login já disponível no template.</p>
+        <div class="alert alert-info">
+            Repare que esta página <strong>não exige login</strong> para ser vista. Isso é proposital: o módulo de login é um recurso opcional, pronto para ser usado (ou não) pelo seu grupo. Veja abaixo como ele funciona e como ativá-lo em suas próprias páginas.
+        </div>
+        <p>Ao montar o site do seu projeto, adapte este conteúdo à sua necessidade ou comece do zero, removendo tudo o que estiver aqui.</p>
+
+        <h3>Como este ambiente está organizado</h3>
+        <p>O projeto é dividido em duas partes que rodam juntas quando você executa <code>npm start</code>:</p>
+        <ul>
+            <li><strong>Front end (pasta <code>public</code>)</strong>: os arquivos estáticos (HTML, CSS e JavaScript) que o navegador do usuário carrega. É aqui que você vai trabalhar a maior parte do tempo.</li>
+            <li><strong>Back end / API (pasta <code>db</code>)</strong>: o arquivo <code>db.json</code>, servido automaticamente pelo JSON Server como uma API REST.</li>
+        </ul>
+
+        <h4>Arquivos do site (Front End)</h4>
+        <p>Para montar seu site, edite os arquivos existentes e crie novos arquivos dentro da pasta <code>public</code>. Sugerimos organizá-la assim:</p>
+        <ul>
+            <li><strong>Pasta <code>assets</code></strong>: arquivos de formatação (CSS), scripts (JS), imagens (JPG, PNG, GIF, SVG etc.), fontes (TTF) e outros recursos utilizados por todo o site.</li>
+            <li><strong>Pasta <code>modulos</code></strong>: os arquivos de cada funcionalidade do site. Crie uma sub-pasta por módulo — pode ser útil também para dividir o trabalho entre os integrantes do grupo.</li>
+            <li><strong>Arquivo <code>index.html</code></strong>: a "home page" do site (este arquivo).</li>
+        </ul>
+
+        <h3>Módulo de Login (opcional)</h3>
+        <p>O template inclui um módulo pronto de cadastro e login de usuários, localizado em <code>modulos/login/</code> e <code>assets/js/login.js</code>. Use-o como está, adapte-o ou remova-o — fica a critério do seu grupo.</p>
+
+        <h4>Testando o módulo de login</h4>
+        <ol>
+            <li>Clique em <a href="home.html"><strong>Minha conta</strong></a>, no topo da página. Como essa página é protegida, você será automaticamente redirecionado para a tela de login.</li>
+            <li>Informe um dos usuários de exemplo já cadastrados no <code>db.json</code>:
+                <ul>
+                    <li><code>admin</code> — senha <code>123</code></li>
+                    <li><code>user</code> — senha <code>123</code></li>
+                </ul>
+            </li>
+            <li>Após o login, você volta automaticamente para <code>home.html</code>, que lê os dados do usuário no <code>sessionStorage</code> e permite fazer logout de volta para esta home pública.</li>
+            <li>Também existe uma segunda página protegida de exemplo, em <code>modulos/login/index.html</code>, que lista todos os usuários cadastrados.</li>
+        </ol>
+        <div class="alert alert-warning">
+            <strong>Atenção:</strong> a senha é comparada em texto puro (sem criptografia/hash). Isso é aceitável apenas neste ambiente de laboratório/aprendizado — nunca faça isso em uma aplicação real.
+        </div>
+
+        <h4>Protegendo uma página com login</h4>
+        <p>Para exigir que o usuário esteja logado antes de acessar uma página do seu site, inclua a seguinte tag no <code>&lt;head&gt;</code> dela:</p>
+        <pre>&lt;script src="../../assets/js/login.js"&gt;&lt;/script&gt;</pre>
+        <p>Ao incluir esse script, se o usuário ainda não tiver feito login, o navegador é automaticamente redirecionado para a tela de <strong>Identificação de Usuário</strong>. Feito o login com sucesso, ele volta para a página que originou o redirecionamento.</p>
+        <p>Para manter uma página <strong>pública</strong> (como esta home), simplesmente não inclua esse script nela — é exatamente o que fizemos aqui.</p>
+
+        <h4>Sessão do usuário logado</h4>
+        <p>Ao logar, o módulo grava a chave <code>usuarioCorrente</code> no <code>sessionStorage</code> do navegador, com um objeto contendo <code>id</code>, <code>nome</code>, <code>login</code> e <code>email</code>. Essa informação some quando a aba do navegador é fechada (é uma sessão, não um login permanente).</p>
+        <p>Em uma página protegida, adicione um elemento com <code>id="userInfo"</code> (por exemplo <code>&lt;span id="userInfo"&gt;&lt;/span&gt;</code>) para que o script exiba automaticamente o nome do usuário logado e um link de logout.</p>
+
+        <h4>Base de dados de usuários</h4>
+        <p>Os usuários ficam na coleção <code>usuarios</code> do arquivo <code>codigo/db/db.json</code>, exposta pelo JSON Server em <code>/usuarios</code>. Novos cadastros feitos pela tela de "Registrar" são gravados diretamente nesse arquivo.</p>
+
+        <h3>Servidor Web e API baseada no JSON Server (Back end)</h3>
+        <p>O ambiente de back end é baseado no Node.js e utiliza o módulo <a href="https://github.com/typicode/json-server" target="_blank" rel="noopener">JSON Server</a> para prover, a partir de um único comando, duas coisas ao mesmo tempo:</p>
+        <ul>
+            <li><strong>Arquivos estáticos (pasta <code>public</code>)</strong>: dá acesso aos arquivos do front end (HTML, CSS e JavaScript) — inclusive esta própria página.</li>
+            <li><strong>API RESTful (pasta <code>db</code>)</strong>: cria automaticamente uma rota para cada coleção definida em <code>db.json</code> (por exemplo, a chave <code>usuarios</code> vira o endpoint <code>/usuarios</code>, com suporte a GET, POST, PUT e DELETE).</li>
+        </ul>
+
+        <h4>Arquitetura do site</h4>
+        <p>A imagem a seguir apresenta a arquitetura desse ambiente, relacionando-a com as pastas do projeto.</p>
+        <p><img class="img-fluid d-block w-75 m-auto" src="./assets/images/servidor.png" alt="Diagrama mostrando o front end na pasta public e o back end/API a partir da pasta db"></p>
+
+        <h4>Arquivo db.json</h4>
+        <p>O arquivo <code>db.json</code>, na pasta <code>db</code>, define as estruturas de dados da sua aplicação. Cada chave de nível superior vira uma coleção/endpoint REST. Para o JSON Server, é fundamental que cada item de uma coleção tenha um atributo identificador chamado <code>id</code>.</p>
+        <p><img class="img-fluid d-block w-50 m-auto" src="./assets/images/arquivo_json.png" alt="Exemplo de estrutura do arquivo db.json"></p>
+        <p>Precisa persistir dados de um novo módulo? Basta adicionar uma nova coleção em <code>db.json</code> — o endpoint correspondente é criado automaticamente, sem precisar alterar nenhum código de back end.</p>
+
+        <h3>Próximos passos</h3>
+        <ol>
+            <li>Explore esta home e o módulo de login para entender o padrão de sessão via <code>sessionStorage</code>.</li>
+            <li>Defina, com o seu grupo, as coleções que o projeto vai precisar em <code>db.json</code>.</li>
+            <li>Crie uma sub-pasta em <code>modulos/</code> para cada funcionalidade do seu projeto.</li>
+            <li>Decida quais páginas do seu site serão públicas e quais exigirão login, seguindo o padrão descrito acima.</li>
+        </ol>
+    </main>
+  </body>
+</html>

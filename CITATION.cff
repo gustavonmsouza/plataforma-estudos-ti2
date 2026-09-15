@@ -1,0 +1,37 @@
+cff-version: 1.0.1
+message: Please cite this software using these metadata.
+# title: Sigla/Nome + descricao curta (ate 80 caracteres)
+title: "[SIGLA/Nome] - Descricao curta do projeto (ate 80 caracteres)"
+# abstract: Descricao completa do projeto (ate 500 caracteres)
+abstract: "[Descricao completa do projeto, ate 500 caracteres. Descreva o objetivo, a solucao proposta, as tecnologias utilizadas e os principais resultados.]"
+# Adicione ou remova autores conforme a composicao da equipe.
+# Para cada integrante, preencha family-names com o sobrenome e given-names com os demais nomes.
+# Mantenha os professores como autores quando essa for a orientacao da disciplina.
+authors:
+  - family-names: 
+    given-names: 
+  - family-names: 
+    given-names: 
+  - family-names: 
+    given-names: 
+  - family-names: 
+    given-names: 
+  - family-names: 
+    given-names: 
+  - family-names: 
+    given-names:
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: 
+    given-names: 
+  - name-suffix: Professor
+    affiliation: PUC Minas
+    family-names: 
+    given-names: 
+keywords:
+  - 
+  - 
+repository-code: 
+license: CC-BY-4.0
+version: 1.0.0
+date-released: 2026-02-27

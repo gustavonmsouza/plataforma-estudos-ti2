@@ -1,0 +1,16 @@
+{
+  "name": "ti2-template-2026-2",
+  "version": "1.0.0",
+  "description": "Template da disciplina de Trabalho Interdisciplinar 2 - Front End com backend baseado no JSON Server",
+  "main": "",
+  "scripts": {
+   "start": "npx json-server@0.17.4 ./codigo/db/db.json --static ./codigo/public --port 3000 --host 0.0.0.0"
+  },
+  "keywords": [],
+  "author": "Ciência da Computação - PUC Minas",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1",
+    "json-server": "^0.17.4"
+  }
+}

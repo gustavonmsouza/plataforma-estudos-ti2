@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TI2 - Front End | Minha conta</title>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="./assets/js/login.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="banner">
+        <img src="./assets/images/banner_ti.png" alt="" />
+      </div>
+      <div class="barra-info">
+        <nav class="menu">
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Sobre nós</a></li>
+          </ul>
+        </nav>
+        <div class="dados-usuario">
+          <span id="navUsuario"></span>
+        </div>
+      </div>
+    </header>
+    <main class="container">
+        <div class="alert alert-info">
+            Esta página é <strong>protegida</strong>: ela inclui <code>assets/js/login.js</code> no <code>&lt;head&gt;</code>, então só é exibida a quem já fez login. Os dados abaixo vêm do objeto salvo em <code>sessionStorage.usuarioCorrente</code>.
+        </div>
+
+        <div class="card shadow-sm mx-auto" style="max-width: 480px;">
+            <div class="card-body text-center p-4">
+                <div class="display-1 mb-2">👤</div>
+                <h3 class="card-title border-0 mb-1">Olá, <span id="nomeUsuario"></span>!</h3>
+                <p class="text-muted mb-4">Você está autenticado nesta sessão do navegador.</p>
+
+                <ul class="list-group list-group-flush text-start mb-4">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span class="text-muted">Login</span>
+                        <span id="loginUsuario" class="fw-bold"></span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <span class="text-muted">E-mail</span>
+                        <span id="emailUsuario" class="fw-bold"></span>
+                    </li>
+                </ul>
+
+                <button type="button" id="btnSair" class="btn btn-outline-danger w-100">Sair</button>
+            </div>
+        </div>
+
+        <p class="text-center mt-4">
+            <a href="index.html">&larr; Voltar para a home</a>
+        </p>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            document.getElementById('nomeUsuario').textContent = usuarioCorrente.nome || '';
+            document.getElementById('loginUsuario').textContent = usuarioCorrente.login || '';
+            document.getElementById('emailUsuario').textContent = usuarioCorrente.email || '';
+            document.getElementById('navUsuario').textContent = 'Olá, ' + (usuarioCorrente.nome || '');
+        });
+
+        // Ao contrário do logoutUser() padrão (que volta para a tela de login),
+        // aqui o logout devolve o usuário para a home pública do site.
+        document.getElementById('btnSair').addEventListener('click', function () {
+            sessionStorage.removeItem('usuarioCorrente');
+            window.location.href = 'index.html';
+        });
+    </script>
+  </body>
+</html>
