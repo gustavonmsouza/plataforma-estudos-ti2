@@ -2,13 +2,15 @@
 
 Informações básicas do projeto.
 
-* **Projeto:** [NOME DO PROJETO]
-* **Repositório GitHub:** [LINK PARA O REPOSITÓRIO NO GITHUB]
+* **Projeto:** Plataforma de Estudos - Plataforma web para apoiar alunos e professores
+* **Repositório GitHub:** (https://github.com/gustavonmsouza/plataforma-estudos-ti2)
 * **Membros da equipe:**
-
-  * [Fulano](https://github.com/fulano) ⚠️ EXEMPLO ⚠️
-  * [Beltrano](https://github.com/beltrano) ⚠️ EXEMPLO ⚠️
-  * [Cicrano](https://github.com/cicrano) ⚠️ EXEMPLO ⚠️
+  
+  * [Gabriela Schaper Soriano Veiga] (https://github.com/GabiScha)
+  * [Gustavo Norberto Medeiros de Souza] (https://github.com/gustavonmsouza)
+  * [Lucas Marçal Vilela]
+  * [Matheus Romling Rotheia Almeida] (https://github.com/Matheus-Romling)
+  * [Renato Ferreira Miranda Guimarães] (https://github.com/Servor234)
 
 Este documento acompanha a evolução do projeto ao longo das duas fases da disciplina: primeiro a fase de **Estratégia**, guiada pelo Design Thinking, em que entendemos o problema e projetamos a solução; depois a fase de **Implementação**, guiada pelo Scrum, em que construímos a aplicação ao longo de três sprints.
 
@@ -36,72 +38,41 @@ Detalhes sobre o espaço de problema, os objetivos do projeto, sua justificativa
 
 ## Problema
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+A falta de motivação e de sentido nos estudos pode afetar o interesse e o envolvimento dos estudantes brasileiros com a educação. Esse cenário pode estar relacionado a dificuldades em manter a concentração, ao interesse pelas atividades propostas e à percepção da relação entre os conteúdos estudados e os objetivos futuros.
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+Diante disso, o problema de pesquisa pode ser definido pela seguinte questão:
 
-Nesse momento você deve apresentar o problema que a sua aplicação deve resolver. No entanto, não é a hora de comentar sobre a aplicação. Descreva também o contexto em que essa aplicação será usada, se houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de fato existir, pois ainda não é a hora de apresentar requisitos detalhados ou projetos.
-
-**Orientações**:
-
-- [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
-- [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-- [Brainstorming](https://www.euax.com.br/2018/09/brainstorming/)
-
-</details>
+**Como aumentar a motivação e o sentido dos estudantes brasileiros em relação aos estudos?**
 
 ## Objetivos
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+**Objetivo geral**
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+Desenvolver um software que contribua para tornar a experiência educacional mais atrativa e estimular o envolvimento dos estudantes com os estudos.
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+**Objetivos específicos**
 
-**Orientações**:
-
-- [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
-
-</details>
-
+- Identificar fatores que influenciam o interesse, a concentração e o envolvimento dos estudantes com os estudos.
+- Compreender as necessidades e dificuldades dos estudantes durante a experiência educacional.
+- Propor formas de tornar as atividades de aprendizagem mais atrativas e estimular a participação dos estudantes.
+  
 ## Justificativa
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+A escolha do tema está relacionada à necessidade de compreender as dificuldades enfrentadas pelos estudantes durante sua experiência educacional. As entrevistas realizadas pelo grupo apontaram diferentes situações relacionadas ao interesse, à concentração e à forma como os estudantes se relacionam com as atividades de aprendizagem. Também foram identificadas preferências por atividades mais dinâmicas, interativas e diferentes das abordagens tradicionais.
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+Durante as entrevistas, foram mencionados recursos como jogos, quizzes e atividades lúdicas como formas de tornar os momentos de aprendizagem mais interessantes e favorecer a participação dos estudantes. Também foram identificadas dificuldades relacionadas à concentração, à realização dos estudos e à percepção da relação entre os conteúdos estudados e os objetivos futuros.
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
-
-**Orientações**:
-
-- [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
-
-</details>
+Diante dessas observações, os objetivos específicos foram definidos para compreender melhor os fatores que influenciam o envolvimento dos estudantes e suas necessidades durante o processo educacional. A partir dessa investigação, busca-se propor formas de tornar a experiência de aprendizagem mais atrativa e estimular a participação dos estudantes.
 
 ## Público-Alvo
 
-**✳️✳️✳️ COLOQUE AQUI O SEU TEXTO ✳️✳️✳️**
+O público-alvo da aplicação é formado principalmente por **estudantes e professores**, com perfis e necessidades diferentes dentro do ambiente educacional.
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+Os **estudantes** são usuários que utilizam a plataforma para apoiar sua rotina de estudos e acompanhar seu desenvolvimento. Entre os perfis identificados estão estudantes que apresentam dificuldades relacionadas à concentração, ao início e à continuidade dos estudos e ao interesse pelas atividades. Também foram identificadas preferências por atividades mais dinâmicas, interativas e lúdicas.
 
-Descreva quais são as pessoas que usarão a sua aplicação indicando os diferentes perfis. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações hierárquicas, etc.
+Os **professores** são responsáveis pelo acompanhamento das atividades educacionais e possuem necessidades relacionadas à organização de suas turmas, ao planejamento e ao acompanhamento dos estudantes. A pesquisa identificou a necessidade de facilitar a criação de atividades e tornar as aulas mais interessantes para os alunos.
 
-Adicione informações sobre o público-alvo por meio de uma descrição textual, ou diagramas de personas, mapa de stakeholders, ou como o grupo achar mais conveniente.
-
-**Orientações**:
-
-- [Público-alvo: o que é, tipos, como definir seu público e exemplos](https://klickpages.com.br/blog/publico-alvo-o-que-e/)
-- [Qual a diferença entre público-alvo e persona?](https://rockcontent.com/blog/diferenca-publico-alvo-e-persona/)
-
-</details>
-
----
+No projeto, esses perfis foram representados pelas personas **Lucas**, **Maria** e **Bernardo**, que apresentam diferentes características, necessidades, preferências e dificuldades relacionadas ao contexto educacional. Lucas e Bernardo representam perfis de estudantes, enquanto Maria representa o perfil de professora.
 
 # Product Discovery
 
@@ -109,60 +80,90 @@ Nesta etapa, aprofundamos a compreensão do problema escolhido a partir da persp
 
 ## Mapa de Stakeholders
 
-**✳️✳️✳️ COLOQUE AQUI O SEU MAPA DE STAKEHOLDERS ✳️✳️✳️**
-
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-O Mapa de Stakeholders identifica as pessoas e grupos que têm alguma relação com o problema: quem sofre com ele no dia a dia, quem decide sobre ele, quem pode ser entrevistado ou impactado pela solução. Esse mapa orienta quem o grupo deve procurar antes de partir para as entrevistas qualitativas.
-
-</details>
+<img src="images/mapa-stakeholders.png" alt="Mapa de Stakeholders" width="700">
 
 ## Matriz CSD
 
-**✳️✳️✳️ COLOQUE AQUI A SUA MATRIZ CSD ✳️✳️✳️**
-
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-A Matriz de Certezas, Suposições e Dúvidas organiza o que o grupo já sabe sobre o problema (certezas), o que está apenas supondo sem evidência (suposições) e o que ainda precisa ser descoberto (dúvidas). As suposições e dúvidas listadas aqui devem orientar o roteiro de entrevistas da pesquisa de campo.
-
-**Orientações**:
-
-- [Matriz Certezas, Suposições e Dúvidas](https://medium.com/educa%C3%A7%C3%A3o-fora-da-caixa/matriz-certezas-suposi%C3%A7%C3%B5es-e-d%C3%BAvidas-fa2263633655)
-
-</details>
+<img src="images/matriz-csd.png" alt="Matriz CSD" width="700">
 
 ## Pesquisa de Campo
 
-**✳️✳️✳️ APRESENTE O ROTEIRO DE ENTREVISTAS, OS ENTREVISTADOS E OS HIGHLIGHTS DA PESQUISA ✳️✳️✳️**
+### Roteiro de Entrevistas
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+<table>
+  <tr>
+    <td><img src="images/roteiro1.png" width="450"></td>
+    <td><img src="images/roteiro2.png" width="450"></td>
+  </tr>
+  <tr>
+    <td><img src="images/roteiro3.png" width="450"></td>
+    <td><img src="images/roteiro4.png" width="450"></td>
+  </tr>
+</table>
 
-Apresente o roteiro utilizado nas entrevistas qualitativas, a lista de pessoas entrevistadas (com perfil resumido) e os *highlights* de pesquisa — uma síntese das descobertas mais relevantes de cada entrevista, organizadas por tema ou por dúvida da Matriz CSD que foi respondida. É esse material, e não suposições da equipe, que deve fundamentar as personas a seguir.
+### Entrevistados
 
-</details>
+| Entrevistado | Perfil |
+|---|---|
+| Luciana Gualberto Medeiros | Professora |
+| Fernanda Moura Veiga | Estudante |
+| Bernardo Medeiros | Estudante |
+| Bruno | Estudante |
+
+### Highlights da Pesquisa
+
+<table>
+  <tr>
+    <td><img src="images/entrevista-qualitativa1.png" width="450"></td>
+    <td><img src="images/entrevista-qualitativa2.png" width="450"></td>
+  </tr>
+  <tr>
+    <td><img src="images/entrevista-qualitativa3.png" width="450"></td>
+    <td><img src="images/entrevista-qualitativa4.png" width="450"></td>
+  </tr>
+</table>
 
 ## Personas
 
-**✳️✳️✳️ APRESENTE OS DIAGRAMAS DE PERSONAS ✳️✳️✳️**
+As personas foram construídas a partir dos resultados obtidos na pesquisa de campo e representam diferentes perfis relacionados ao contexto educacional.
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+### Lucas
 
-Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
+Lucas tem 15 anos, é estudante do ensino médio e mora em Belo Horizonte. Está passando por uma etapa escolar mais exigente e precisa dedicar mais tempo aos estudos, mas encontra dificuldades para conciliar essa rotina com outras atividades.
 
-**Orientações**:
+Entre suas principais dificuldades estão a concentração, o início dos estudos e a permanência em uma determinada matéria. Seu objetivo é conseguir se concentrar melhor, estudar de forma mais eficiente e manter uma rotina de estudos. Lucas demonstra interesse por uma ferramenta que auxilie na organização dos estudos, especialmente por meio de um temporizador.
 
-- [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-- [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-- [Rock Content](https://rockcontent.com/blog/personas/)
-- [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
+### Maria
 
-</details>
+Maria tem 50 anos, é professora do ensino fundamental e mora em Belo Horizonte. Possui 26 anos de experiência na área da educação e busca promover a aprendizagem e uma maior participação dos alunos.
 
----
+Entre seus principais desafios estão atrair e manter o interesse dos estudantes, criar aulas interessantes e organizar seu calendário. Seus objetivos incluem cumprir sua programação, aumentar o interesse dos alunos e criar novos materiais para suas aulas. Maria demonstra interesse por recursos que possibilitem atividades interativas e novas formas de trabalhar os conteúdos.
+
+### Bernardo
+
+Bernardo tem 7 anos, é estudante do ensino fundamental e mora em Belo Horizonte com sua família. Gosta da escola, especialmente de atividades diferentes, e demonstra interesse por aprender por meio de jogos e brincadeiras.
+
+Entre suas principais dificuldades estão manter a concentração, iniciar os estudos e manter o interesse nas aulas. Seus objetivos são melhorar a concentração, aumentar a eficiência nos estudos e manter uma rotina de aprendizagem. Bernardo demonstra preferência por atividades mais divertidas e jogos educativos.
+
+### Diagramas das Personas
+
+<table>
+
+  <tr>
+    <td align="center">
+      <strong>Lucas</strong><br>
+      <img src="images/persona-lucas.png" width="250">
+    </td>
+    <td align="center">
+      <strong>Maria</strong><br>
+      <img src="images/persona-maria.png" width="273">
+    </td>
+    <td align="center">
+      <strong>Bernardo</strong><br>
+      <img src="images/persona-bernardo.png" width="250">
+    </td>
+  </tr>
+</table>
 
 # Product Design
 
@@ -170,39 +171,63 @@ Nesse momento, vamos transformar os insights e validações obtidos em soluçõe
 
 ## Proposta de Valor
 
-### Proposta para Persona XPTO ⚠️ EXEMPLO ⚠️
+A proposta de valor foi definida a partir das necessidades, dificuldades e objetivos identificados nas personas. Para cada perfil, foi elaborada uma solução específica, buscando atender às suas principais necessidades dentro do contexto educacional.
 
-![Exemplo de proposta de valor](images/exemplo-proposta-valor.png)
+### Lucas
 
-**✳️✳️✳️ APRESENTE O DIAGRAMA DA PROPOSTA DE VALOR PARA CADA PERSONA ✳️✳️✳️**
+Para Lucas, a proposta de valor consiste em um **cronômetro adaptativo**, que permite organizar as sessões de estudo de acordo com sua rotina e dividir o estudo em períodos menores para ajudar a manter a concentração. A solução busca auxiliar o estudante a recuperar o foco, melhorar sua eficiência nos estudos e ter mais tempo para outras atividades.
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+### Maria
 
-O mapa da proposta de valor é uma ferramenta que nos ajuda a definir qual tipo de produto ou serviço melhor atende às personas definidas anteriormente.
+Para Maria, a proposta de valor consiste em um **sistema de atividades interativas**, permitindo a criação de atividades dinâmicas para aumentar a participação e o interesse dos alunos. A solução também facilita a criação de aulas interessantes e contribui para aumentar o foco da turma.
 
-</details>
+### Bernardo
+
+Para Bernardo, a proposta de valor consiste em um **sistema de jogos educativos**, utilizando jogos para tornar os estudos mais interessantes e aumentar a diversão e o interesse do aluno durante a aprendizagem.
+
+### Diagramas das Propostas de Valor
+
+<table>
+  <tr>
+    <td align="center">
+      <strong>Lucas</strong><br>
+      <img src="images/proposta-de-valor-lucas.png" width="300">
+    </td>
+    <td align="center">
+      <strong>Maria</strong><br>
+      <img src="images/proposta-de-valor-maria.png" width="300">
+    </td>
+    <td align="center">
+      <strong>Bernardo</strong><br>
+      <img src="images/proposta-de-valor-bernardo.png" width="300">
+    </td>
+  </tr>
+</table>
 
 ## Histórias de Usuários
 
-Com base na análise das personas foram identificadas as seguintes histórias de usuários:
+Com base na análise das personas, foram identificadas as seguintes histórias de usuário, considerando as necessidades dos estudantes e professores e as funcionalidades propostas para a plataforma.
 
-| EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
-| --------------------- | ------------------------------------------ | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas ⚠️ EXEMPLO ⚠️ | Não esquecer de fazê-las             |
-| Administrador         | Alterar permissões ⚠️ EXEMPLO ⚠️      | Permitir que possam administrar contas |
+### Histórias dos Alunos
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+| EU COMO... PERSONA | QUERO/PRECISO... FUNCIONALIDADE | PARA... MOTIVO/VALOR |
+|---|---|---|
+| Lucas | Utilizar um cronômetro adaptativo para organizar minhas sessões de estudo | Manter minha concentração e organizar melhor minha rotina de estudos |
+| Lucas | Dividir meu tempo de estudo em períodos menores | Facilitar a concentração durante os estudos |
+| Lucas | Acompanhar minhas tarefas e atividades | Organizar minha rotina acadêmica e não esquecer minhas responsabilidades |
+| Bernardo | Utilizar jogos educativos durante os estudos | Tornar o aprendizado mais divertido e interessante |
+| Bernardo | Realizar atividades interativas | Aumentar meu interesse e participação nos estudos |
+| Bernardo | Acompanhar meu progresso nos estudos | Perceber minha evolução e manter minha rotina de aprendizagem |
 
-Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão e elicitação dos requisitos funcionais e não funcionais da sua aplicação. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
+### Histórias dos Professores
 
-**Orientações**:
-
-- [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-- [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
-
-</details>
+| EU COMO... PERSONA | QUERO/PRECISO... FUNCIONALIDADE | PARA... MOTIVO/VALOR |
+|---|---|---|
+| Maria | Criar atividades interativas para meus alunos | Aumentar a participação e o interesse da turma |
+| Maria | Organizar minhas turmas e grupos | Facilitar o gerenciamento dos alunos e das atividades |
+| Maria | Acompanhar as tarefas realizadas pelos alunos | Verificar o andamento das atividades da turma |
+| Maria | Gerenciar notas dos alunos | Acompanhar o desempenho acadêmico da turma |
+| Maria | Organizar minhas atividades em um calendário | Cumprir meu cronograma e facilitar o planejamento das aulas |
 
 ## Requisitos
 
@@ -210,34 +235,29 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ### Requisitos Funcionais
 
-| ID     | Descrição do Requisito                                   | Prioridade |
-| ------ | ---------------------------------------------------------- | ---------- |
-| RF-001 | Permitir que o usuário cadastre tarefas ⚠️ EXEMPLO ⚠️ | ALTA       |
-| RF-002 | Emitir um relatório de tarefas no mês ⚠️ EXEMPLO ⚠️ | MÉDIA     |
+| ID | Descrição do Requisito | Prioridade |
+|---|---|---|
+| RF-001 | Permitir que o aluno cadastre e gerencie suas tarefas | ALTA |
+| RF-002 | Permitir que o aluno utilize um cronômetro para organizar suas sessões de estudo | ALTA |
+| RF-003 | Permitir que o aluno acompanhe seu progresso nos estudos | ALTA |
+| RF-004 | Permitir que o aluno participe de atividades interativas e jogos educativos | ALTA |
+| RF-005 | Permitir que o aluno acompanhe sua sequência de estudos e conquistas | MÉDIA |
+| RF-006 | Permitir que o aluno acumule pontos por meio de suas atividades na plataforma | MÉDIA |
+| RF-007 | Permitir que o aluno utilize os pontos acumulados na loja de cosméticos | MÉDIA |
+| RF-008 | Permitir que o professor crie atividades interativas | ALTA |
+| RF-009 | Permitir que o professor gerencie suas turmas, grupos e tarefas | ALTA |
+| RF-010 | Permitir que o professor gerencie as notas dos alunos e organize suas atividades por meio de um calendário | ALTA |
 
-### Requisitos não Funcionais
+### Requisitos Não Funcionais
 
-| ID      | Descrição do Requisito                                                              | Prioridade |
-| ------- | ------------------------------------------------------------------------------------- | ---------- |
-| RNF-001 | O sistema deve ser responsivo para rodar em um dispositivos móvel ⚠️ EXEMPLO ⚠️ | MÉDIA     |
-| RNF-002 | Deve processar requisições do usuário em no máximo 3s ⚠️ EXEMPLO ⚠️          | BAIXA      |
-
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-Os requisitos de um projeto são classificados em dois grupos:
-
-- [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional): correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-- [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional): correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
-
-Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
-
-**Orientações**:
-
-- [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-- [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
-</details>
+| ID | Descrição do Requisito | Prioridade |
+|---|---|---|
+| RNF-001 | O sistema deve possuir uma interface responsiva, adaptando-se a diferentes tamanhos de tela | ALTA |
+| RNF-002 | O sistema deve apresentar uma interface de fácil utilização e compreensão | ALTA |
+| RNF-003 | O sistema deve proteger os dados dos usuários contra acesso não autorizado | ALTA |
+| RNF-004 | O sistema deve garantir a integridade dos dados armazenados | ALTA |
+| RNF-005 | O sistema deve apresentar as funcionalidades de forma consistente nos principais navegadores utilizados | MÉDIA |
+| RNF-006 | O sistema deve responder às ações do usuário em tempo adequado, sem atrasos que prejudiquem a utilização da plataforma | MÉDIA |
 
 ## User Story Map e Definição do MVP
 
