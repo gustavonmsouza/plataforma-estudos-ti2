@@ -191,15 +191,15 @@ Para Bernardo, a proposta de valor consiste em um **sistema de jogos educativos*
   <tr>
     <td align="center">
       <strong>Lucas</strong><br>
-      <img src="images/proposta-de-valor-lucas.png" width="300">
+      <img src="images/proposta-de-valor-lucas.png" width="600">
     </td>
     <td align="center">
       <strong>Maria</strong><br>
-      <img src="images/proposta-de-valor-maria.png" width="300">
+      <img src="images/proposta-de-valor-maria.png" width="600">
     </td>
     <td align="center">
       <strong>Bernardo</strong><br>
-      <img src="images/proposta-de-valor-bernardo.png" width="300">
+      o<img src="images/proposta-de-valor-bernardo.png" width="600">n
     </td>
   </tr>
 </table>
@@ -284,59 +284,72 @@ Artefatos relacionados com a interface e a interacão do usuário na proposta de
 
 Estes são os protótipos de telas do sistema.
 
-#### TELA XPTO ⚠️ EXEMPLO ⚠️
 
-Descrição para a tela XPTO
+### Tela Inicial do Aluno
 
-![Exemplo de wireframe](images/exemplo-wireframe.png)
+A tela inicial do aluno apresenta uma visão geral da plataforma, reunindo os principais recursos de acompanhamento dos estudos, como turmas, tarefas e notas.
 
-**✳️✳️✳️ COLOQUE AQUI OS PROTÓTIPOS DE TELAS COM TÍTULO E DESCRIÇÃO ✳️✳️✳️**
+<img src="images/tela-inicial-aluno.png" alt="Tela Inicial do Aluno" width="700">
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+### Tarefas do Aluno
 
-Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
+A tela de tarefas permite que o aluno visualize suas tarefas e acompanhe as atividades disponíveis na plataforma.
 
-**Orientações**:
+<img src="images/tarefas-aluno.png" alt="Tarefas do Aluno" width="700">
 
-- [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-- [Figma](https://www.figma.com/)
-- [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-- [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+### Calendário
 
-</details>
+A tela de calendário permite que o aluno visualize suas tarefas e atividades organizadas ao longo do mês.
+
+<img src="images/calendario-de-tarefas.png" alt="Calendário de Tarefas" width="700">
+
+### Perfil do Aluno
+
+A tela de perfil apresenta as informações do aluno, seus pontos e seu progresso nos estudos, incluindo conquistas e sequência de estudos.
+
+<img src="images/perfil-aluno.png" alt="Perfil do Aluno" width="700">
+
+### Loja de Cosméticos
+
+A loja de cosméticos permite que o aluno visualize os produtos disponíveis e utilize seus pontos acumulados para realizar compras.
+
+<img src="images/loja-cosmeticos.png" alt="Loja de Cosméticos" width="700">
+
+### Tela Inicial do Professor
+
+A tela inicial do professor apresenta as principais funcionalidades disponíveis para o gerenciamento das atividades acadêmicas.
+
+<img src="images/tela-inicial-professor.png" alt="Tela Inicial do Professor" width="700">
+
+### Gerenciamento de Tarefas
+
+A tela de gerenciamento de tarefas permite que o professor visualize e organize as tarefas disponíveis para seus alunos.
+
+<img src="images/gerenciamento-de-tarefas-professor.png" alt="Gerenciamento de Tarefas do Professor" width="700">
+
+### Gerenciamento de Turmas
+
+A tela de gerenciamento de turmas permite que o professor visualize e organize suas turmas, grupos e alunos.
+
+<img src="images/gerenciamento-de-turmas-professor.png" alt="Gerenciamento de Turmas do Professor" width="700">
+
+### Perfil do Professor
+
+A tela de perfil apresenta as informações do professor, sua disciplina e as opções relacionadas ao gerenciamento de seu perfil.
+
+<img src="images/perfil-do-professor.png" alt="Perfil do Professor" width="700">
 
 ### User Flow
 
-![Exemplo de fluxo de telas](images/exemplo-userflow.png)
+O User Flow foi desenvolvido para representar os caminhos de navegação entre as principais telas da plataforma, considerando os diferentes perfis de usuário e suas respectivas funcionalidades.
 
-**✳️✳️✳️ COLOQUE AQUI O DIAGRAMA DE FLUXO DE TELAS ✳️✳️✳️**
+O fluxo completo das telas está disponível no documento abaixo:
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
-
-**Orientações**:
-
-- [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-- [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-- [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
-
-</details>
+[User Flow - Grupo 3](files/User%20flow%20-%20Grupo%203.pdf)
 
 ### Protótipo Interativo
 
-✅ [Protótipo Interativo (MarvelApp)](https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false)  ⚠️ EXEMPLO ⚠️
-
-**✳️✳️✳️ COLOQUE AQUI UM IFRAME COM SEU PROTÓTIPO INTERATIVO ✳️✳️✳️**
-
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-Um protótipo interativo apresenta o projeto de interfaces e permite ao usuário navegar pelas funcionalidades como se estivesse lidando com o software pronto. Utilize as mesmas ferramentas de construção de wireframes para montagem do seu protótipo interativo. Inclua o link para o protótipo interativo do projeto.
-
-</details>
+[Protótipo Interativo (Figma)](https://www.figma.com/proto/PBYQ3M8zL87PrhYOtnMJXT/Trabalho-TI?node-id=1-2910&starting-point-node-id=1%3A2910)
 
 ---
 
@@ -348,19 +361,11 @@ Detalhes sobre a organização do grupo e o ferramental empregado.
 
 Relação de ferramentas empregadas pelo grupo durante o projeto.
 
-| Ambiente                    | Plataforma | Link de acesso                                     |
-| --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
-
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) editor de código, (2) ferramentas de comunicação, (3) ferramentas de diagramação, (4) plataformas de hospedagem, entre outras.
-
-</details>
+| Ambiente | Plataforma | Link de acesso |
+|---|---|---|
+| Processo de Design Thinking | Miro | https://miro.com/app/board/uXjVHy5TQHE=/ |
+| Repositório de código | GitHub | https://github.com/gustavonmsouza/plataforma-estudos-ti2 |
+| Protótipo Interativo | Figma | https://www.figma.com/design/PBYQ3M8zL87PrhYOtnMJXT/Trabalho-TI |
 
 ## Gerenciamento do Projeto
 
