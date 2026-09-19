@@ -1,37 +1,39 @@
 cff-version: 1.0.1
 message: Please cite this software using these metadata.
-# title: Sigla/Nome + descricao curta (ate 80 caracteres)
-title: "[SIGLA/Nome] - Descricao curta do projeto (ate 80 caracteres)"
-# abstract: Descricao completa do projeto (ate 500 caracteres)
-abstract: "[Descricao completa do projeto, ate 500 caracteres. Descreva o objetivo, a solucao proposta, as tecnologias utilizadas e os principais resultados.]"
-# Adicione ou remova autores conforme a composicao da equipe.
-# Para cada integrante, preencha family-names com o sobrenome e given-names com os demais nomes.
-# Mantenha os professores como autores quando essa for a orientacao da disciplina.
+
+title: "Plataforma de Estudos - Apoio aos estudos e professores"
+
+abstract: "A Plataforma de Estudos é uma aplicação web desenvolvida para auxiliar alunos e professores na organização e acompanhamento das atividades acadêmicas. A plataforma reúne recursos para gerenciamento de tarefas, turmas, grupos e notas, além de recursos de gamificação para os alunos, como pontos, conquistas, sequência de estudos e uma loja de cosméticos."
+
 authors:
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names: 
-  - family-names: 
-    given-names:
+  - family-names: "Veiga"
+    given-names: "Gabriela Schaper Soriano"
+  - family-names: "Souza"
+    given-names: "Gustavo Norberto Medeiros de"
+  - family-names: "Vilela"
+    given-names: "Lucas Marçal"
+  - family-names: "Almeida"
+    given-names: "Matheus Romling Rotheia"
+  - family-names: "Guimaraes"
+    given-names: "Renato Ferreira Miranda"
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: "Kutova"
+    given-names: "Marcos André Silveira"
   - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: 
-    given-names: 
+    family-names: "Carneiro"
+    given-names: "Rommel Vieira"
+
 keywords:
-  - 
-  - 
-repository-code: 
+  - "educação"
+  - "estudos"
+  - "gamificação"
+  - "plataforma web"
+  - "estudantes"
+
+repository-code: "https://github.com/gustavonmsouza/plataforma-estudos-ti2"
+
 license: CC-BY-4.0
 version: 1.0.0
-date-released: 2026-02-27
+date-released: 2026-09-19
