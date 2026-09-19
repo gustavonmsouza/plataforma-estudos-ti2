@@ -365,26 +365,35 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 ## Gerenciamento do Projeto
 
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban), utilizada para acompanhar o backlog do produto e o andamento das três sprints.
+O grupo adotou uma metodologia de trabalho baseada no **Scrum**, utilizando um quadro **Kanban** para auxiliar no gerenciamento e acompanhamento das tarefas. A equipe foi organizada de forma auto-organizada, com a divisão de funções entre os integrantes.
 
-![Exemplo de Kanban](images/exemplo-kanban.png)
+### Divisão de Papéis
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+- **Product Owner:** Gabriela Schaper
+- **Scrum Master:** Matheus Romling
+- **Desenvolvedor — foco em artes:** Gustavo Norberto
+- **Desenvolvedor — foco em organização:** Renato Teixeira
+- **Desenvolvedor — foco em código:** Lucas Marçal
 
-Nesta parte do documento, você deve apresentar o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
+As atividades foram subdivididas em tarefas menores, que foram distribuídas entre os integrantes da equipe. Também foram realizadas reuniões semanais de realinhamento para acompanhar o andamento do projeto e garantir uma distribuição equilibrada das atividades.
 
-Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
+### Ferramentas de Gerenciamento
 
-**Orientações**:
+O **Miro** foi utilizado como espaço principal de organização do trabalho e para o acompanhamento das tarefas por meio do quadro Kanban.
 
-- [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-- [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-- [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-- [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-- [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+[Workspace principal do projeto](https://miro.com/app/board/uXjVHwGwjH8=/?share_link_id=452109942937)
 
-</details>
+[Quadro Kanban](https://miro.com/welcomeonboard/YVVjbnFqb2g2QTNNSzJ2eXBIVnpFMk1FNHpiQXRPM3lsQkVyNTduMXVrQ0NpKzR2ZVR0SHRmS1BvTlpiMGxJWUo4cExMUVViMGxyOVBMRjJqMjMyMEF2YnVnZCs1VXlyZ2YzTlZUVVRSK1YyZmFZR3RVNThMWjFGRnRBSk5PM3ZzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=653180971446)
+
+O **Figma** foi utilizado para a criação dos wireframes, desenvolvimento do User Flow e elaboração do protótipo funcional da aplicação.
+
+O **Chat GPT** foi utilizado na criação das imagens das personas.
+
+O **Canva** foi utilizado para a elaboração da apresentação do trabalho e exposição dos resultados desenvolvidos.
+
+O **GitHub** foi utilizado como repositório para organização e armazenamento dos principais artefatos produzidos durante o projeto.
+
+[Repositório do projeto](https://github.com/gustavonmsouza/plataforma-estudos-ti2)
 
 ---
 
