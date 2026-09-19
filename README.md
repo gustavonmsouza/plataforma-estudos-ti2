@@ -1,13 +1,6 @@
-# Plataforma de Estudos - Plataforma web para apoiar alunos e professores
+# Plataforma de Estudos - Apoio aos estudos e professores
 
-Template para Trabalhos Interdisciplinares (TI) do curso de Ciencia da Computacao. Este repositorio deve ser clonado e preenchido conforme as orientacoes de cada disciplina.
-
-> **Orientacao importante:** preencha corretamente o arquivo `CITATION.cff`.
-> O campo `title` deve seguir o mesmo titulo usado neste README:
-> `"[SIGLA/Nome] - Descricao curta do projeto (ate 80 caracteres)"`.
-> Adicione ou remova autores conforme a composicao da equipe.
-
-## Informacoes gerais
+## Informações gerais
 
 * **Disciplina:** TI II
 * **Ano/Semestre:** 2026/2
@@ -35,12 +28,12 @@ Para os alunos, a plataforma também oferece um sistema de gamificação baseado
 Alunos e professores precisam lidar com diferentes atividades e informações relacionadas ao ambiente acadêmico, como tarefas, turmas, grupos, notas e acompanhamento dos estudos. A ausência de um ambiente centralizado pode dificultar a organização dessas informações e o acompanhamento da rotina acadêmica.
 Além disso, o projeto considera a necessidade de incentivar a participação e a continuidade dos estudos por meio de recursos de gamificação. Por isso, a plataforma busca reunir, em um único ambiente, ferramentas de organização acadêmica e mecanismos de acompanhamento do progresso dos alunos.
 
-## Solucao proposta
+## Solução proposta
 
 A solução proposta consiste no desenvolvimento de uma aplicação web de estudos que reúne, em um único ambiente, funcionalidades voltadas para alunos e professores. A plataforma disponibiliza recursos como calendário, gerenciamento e acompanhamento de tarefas, turmas, grupos e notas, permitindo que os usuários organizem e acompanhem suas atividades acadêmicas.
 Para os alunos, a solução também conta com recursos de gamificação, como pontos, conquistas e sequência de estudos. Os pontos acumulados podem ser utilizados na loja de cosméticos integrada à plataforma. Já os professores possuem recursos relacionados ao gerenciamento de turmas e ao acompanhamento das tarefas e atividades dos alunos.
 
-## Arquitetura da solucao
+## Arquitetura da solução
 
 A solução é estruturada como uma aplicação web, tendo como principal componente a interface front-end, responsável pela interação dos usuários com a plataforma.
 A interface é organizada de acordo com os perfis de aluno e professor, disponibilizando funcionalidades como calendário, tarefas, turmas, grupos, notas e perfil. O perfil do aluno também integra recursos de gamificação, como pontos, conquistas e sequência de estudos, além da loja de cosméticos. O perfil do professor disponibiliza informações profissionais e recursos relacionados às suas turmas e atividades.
