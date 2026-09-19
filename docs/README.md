@@ -517,13 +517,19 @@ Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua 
 </details>
 
 ---
-
 # Referências
 
 As referências utilizadas no trabalho foram:
 
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
+* ANDERSON, David J. **Kanban: mudança tecnológica evolutiva para seu negócio de tecnologia**. Rio de Janeiro: Alta Books, 2011.
 
+* FIGMA. **Figma: the collaborative interface design tool**. San Francisco: Figma, 2024. Disponível em: https://www.figma.com. Acesso em: 2 set. 2026.
+
+* GOOGLE. **Material Design**. Google Design, 2021. Disponível em: https://m3.material.io/. Acesso em: 12 set. 2026.
+
+* MIRO. **Miro: visual workspace for innovation**. San Francisco: RealtimeBoard Inc., 2024. Disponível em: https://miro.com. Acesso em: 19 ago. 2026.
+
+* PRESSMAN, Roger S.; MAXIM, Bruce R. **Engenharia de software: uma abordagem profissional**. 9. ed. Porto Alegre: AMGH, 2021.
 <details>
 <summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
 
