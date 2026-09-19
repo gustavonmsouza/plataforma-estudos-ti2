@@ -530,14 +530,3 @@ As referências utilizadas no trabalho foram:
 * MIRO. **Miro: visual workspace for innovation**. San Francisco: RealtimeBoard Inc., 2024. Disponível em: https://miro.com. Acesso em: 19 ago. 2026.
 
 * PRESSMAN, Roger S.; MAXIM, Bruce R. **Engenharia de software: uma abordagem profissional**. 9. ed. Porto Alegre: AMGH, 2021.
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
-
-Inclua todas as referências (livros, artigos, sites, etc.) utilizados no desenvolvimento do trabalho.
-
-**Orientações**:
-
-- [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-- [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
-
-</details>
