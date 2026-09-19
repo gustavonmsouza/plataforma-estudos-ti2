@@ -1,7 +1,5 @@
 # Introdução
 
-Informações básicas do projeto.
-
 * **Projeto:** Plataforma de Estudos - Plataforma web para apoiar alunos e professores
 * **Repositório GitHub:** (https://github.com/gustavonmsouza/plataforma-estudos-ti2)
 * **Membros da equipe:**
@@ -13,8 +11,6 @@ Informações básicas do projeto.
   * [Renato Ferreira Miranda Guimarães] (https://github.com/Servor234)
 
 Este documento acompanha a evolução do projeto ao longo das duas fases da disciplina: primeiro a fase de **Estratégia**, guiada pelo Design Thinking, em que entendemos o problema e projetamos a solução; depois a fase de **Implementação**, guiada pelo Scrum, em que construímos a aplicação ao longo de três sprints.
-
-✅ [Template de Design Thinking (Miro)](https://miro.com/app/board/uXjVHy5TQHE=/) — duplique este board para conduzir com a sua equipe as etapas de Product Discovery e Product Design (Matriz CSD, Mapa de Stakeholders, Entrevistas, Personas, Ideação, Proposta de Valor etc.). Uma versão estática de exemplo também está disponível em [processo-dt.pdf](files/processo-dt.pdf).
 
 ## Sumário
 
@@ -199,7 +195,7 @@ Para Bernardo, a proposta de valor consiste em um **sistema de jogos educativos*
     </td>
     <td align="center">
       <strong>Bernardo</strong><br>
-      o<img src="images/proposta-de-valor-bernardo.png" width="600">n
+      <img src="images/proposta-de-valor-bernardo.png" width="600">
     </td>
   </tr>
 </table>
