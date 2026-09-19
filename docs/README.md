@@ -8,7 +8,7 @@
   * [Gustavo Norberto Medeiros de Souza] (https://github.com/gustavonmsouza)
   * [Lucas Marçal Vilela]
   * [Matheus Romling Rotheia Almeida] (https://github.com/Matheus-Romling)
-  * [Renato Ferreira Miranda Guimarães] (https://github.com/Servor234)
+  * [Renato Teixeira Miranda Guimarães] (https://github.com/Servor234)
 
 Este documento acompanha a evolução do projeto ao longo das duas fases da disciplina: primeiro a fase de **Estratégia**, guiada pelo Design Thinking, em que entendemos o problema e projetamos a solução; depois a fase de **Implementação**, guiada pelo Scrum, em que construímos a aplicação ao longo de três sprints.
 
