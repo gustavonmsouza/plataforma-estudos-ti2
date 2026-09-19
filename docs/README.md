@@ -359,9 +359,11 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 | Ambiente | Plataforma | Link de acesso |
 |---|---|---|
-| Processo de Design Thinking | Miro | https://miro.com/app/board/uXjVHy5TQHE=/ |
-| Repositório de código | GitHub | https://github.com/gustavonmsouza/plataforma-estudos-ti2 |
-| Protótipo Interativo | Figma | https://www.figma.com/design/PBYQ3M8zL87PrhYOtnMJXT/Trabalho-TI |
+| Processo de Design Thinking | Miro | https://miro.com/app/board/uXjVHwGwjH8=/?share_link_id=452109942937 |
+| Quadro Kanban | Miro | https://miro.com/welcomeonboard/YVVjbnFqb2g2QTNNSzJ2eXBIVnpFMk1FNHpiQXRPM3lsQkVyNTduMXVrQ0NpKzR2ZVR0SHRmS1BvTlpiMGxJWUo4cExMUVViMGxyOVBMRjJqMjMyMEF2YnVnZCs1VXlyZ2YzTlZUVVRSK1YyZmFZR3RVNThMWjFGRnRBSk5PM3ZzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=653180971446 |
+| Repositório do projeto | GitHub | https://github.com/gustavonmsouza/plataforma-estudos-ti2 |
+| Protótipo Interativo | Figma | https://www.figma.com/design/PBYQ3M8zL87PrhYOtnMJXT |
+| Apresentação | Canva | https://canva.link/s2m1mu4zdctrf72 |
 
 ## Gerenciamento do Projeto
 
@@ -381,10 +383,6 @@ As atividades foram subdivididas em tarefas menores, que foram distribuídas ent
 
 O **Miro** foi utilizado como espaço principal de organização do trabalho e para o acompanhamento das tarefas por meio do quadro Kanban.
 
-[Workspace principal do projeto](https://miro.com/app/board/uXjVHwGwjH8=/?share_link_id=452109942937)
-
-[Quadro Kanban](https://miro.com/welcomeonboard/YVVjbnFqb2g2QTNNSzJ2eXBIVnpFMk1FNHpiQXRPM3lsQkVyNTduMXVrQ0NpKzR2ZVR0SHRmS1BvTlpiMGxJWUo4cExMUVViMGxyOVBMRjJqMjMyMEF2YnVnZCs1VXlyZ2YzTlZUVVRSK1YyZmFZR3RVNThMWjFGRnRBSk5PM3ZzVXVvMm53MW9OWFg5bkJoVXZxdFhRPT0hdjE=?share_link_id=653180971446)
-
 O **Figma** foi utilizado para a criação dos wireframes, desenvolvimento do User Flow e elaboração do protótipo funcional da aplicação.
 
 O **Chat GPT** foi utilizado na criação das imagens das personas.
@@ -392,8 +390,6 @@ O **Chat GPT** foi utilizado na criação das imagens das personas.
 O **Canva** foi utilizado para a elaboração da apresentação do trabalho e exposição dos resultados desenvolvidos.
 
 O **GitHub** foi utilizado como repositório para organização e armazenamento dos principais artefatos produzidos durante o projeto.
-
-[Repositório do projeto](https://github.com/gustavonmsouza/plataforma-estudos-ti2)
 
 ---
 
