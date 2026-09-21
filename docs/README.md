@@ -257,20 +257,23 @@ As tabelas que se seguem apresentam os requisitos funcionais e não funcionais q
 
 ## User Story Map e Definição do MVP
 
-**✳️✳️✳️ COLOQUE AQUI O SEU USER STORY MAP ✳️✳️✳️**
+O User Story Map foi elaborado para organizar as principais atividades, etapas e histórias de usuário da plataforma, considerando os diferentes perfis de usuários e suas respectivas necessidades.
 
-<details>
-<summary>⚠️ Como preencher esta seção (apague antes de entregar)</summary>
+O mapa apresenta cinco atividades principais da jornada do usuário: acesso ao sistema, planejamento de estudos e aulas, realização de estudos e atividades, acompanhamento de desempenho e comunicação e colaboração.
 
-O User Story Map organiza todas as histórias de usuário em uma visão única do produto, ordenadas pela jornada do usuário (linha) e pela prioridade (coluna). É a partir dele que o grupo recorta o Produto Mínimo Viável (MVP) e distribui o restante do backlog entre as três sprints da fase de Implementação.
+As histórias foram organizadas considerando os perfis de **Maria**, **Bernardo** e **Lucas**, contemplando as necessidades específicas de uma professora e de dois estudantes.
 
-Indique claramente, no seu User Story Map: (1) quais histórias compõem o MVP; (2) em qual sprint (1, 2 ou 3) cada fatia do backlog será desenvolvida.
+### User Story Map
 
-**Orientações**:
+<img src="images/user-story-map.jpg" alt="User Story Map - Plataforma de Estudos" width="1000">
 
-- [User Story Mapping: o que é e como fazer](https://www.atlassian.com/br/agile/project-management/user-story-mapping)
+### Definição do MVP
 
-</details>
+A **Release 1 corresponde ao MVP da plataforma**, reunindo as funcionalidades essenciais para disponibilizar a primeira versão do sistema.
+
+Entre as funcionalidades do MVP estão o login e escolha de perfil, configurações básicas, visualização do cronograma, acesso básico ao banco de materiais, acesso a conteúdos e exercícios, envio de atividades, visualização de notas e frequência, alertas básicos, comunicação entre alunos e professores e fórum básico.
+
+As funcionalidades restantes foram distribuídas entre as **Sprints 2 e 3**, representadas no mapa pelas **Releases 2 e 3**, ampliando progressivamente os recursos de interação, acompanhamento de desempenho, personalização e colaboração da plataforma.
 
 ## Projeto de Interface
 
