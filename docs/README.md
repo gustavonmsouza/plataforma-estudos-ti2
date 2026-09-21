@@ -4,11 +4,11 @@
 * **Repositório GitHub:** (https://github.com/gustavonmsouza/plataforma-estudos-ti2)
 * **Membros da equipe:**
   
-  * [Gabriela Schaper Soriano Veiga] (https://github.com/GabiScha)
-  * [Gustavo Norberto Medeiros de Souza] (https://github.com/gustavonmsouza)
-  * [Lucas Marçal Vilela] (https://github.com/lucasmarcalvilela-crypto)
-  * [Matheus Romling Rotheia Almeida] (https://github.com/Matheus-Romling)
-  * [Renato Teixeira Miranda Guimarães] (https://github.com/Servor234)
+  * [Gabriela Schaper Soriano Veiga](https://github.com/GabiScha)
+  * [Gustavo Norberto Medeiros de Souza](https://github.com/gustavonmsouza)
+  * [Lucas Marçal Vilela](https://github.com/lucasmarcalvilela-crypto)
+  * [Matheus Romling Rotheia Almeida](https://github.com/Matheus-Romling)
+  * [Renato Teixeira Miranda Guimarães](https://github.com/Servor234)
 
 Este documento acompanha a evolução do projeto ao longo das duas fases da disciplina: primeiro a fase de **Estratégia**, guiada pelo Design Thinking, em que entendemos o problema e projetamos a solução; depois a fase de **Implementação**, guiada pelo Scrum, em que construímos a aplicação ao longo de três sprints.
 
@@ -370,15 +370,15 @@ Relação de ferramentas empregadas pelo grupo durante o projeto.
 
 ## Gerenciamento do Projeto
 
-O grupo adotou uma metodologia de trabalho baseada no **Scrum**, utilizando um quadro **Kanban** para auxiliar no gerenciamento e acompanhamento das tarefas. A equipe foi organizada de forma auto-organizada, com a divisão de funções entre os integrantes.
+O grupo adotou uma metodologia de trabalho baseada no **Scrum**, utilizando um quadro **Kanban** para auxiliar no gerenciamento e acompanhamento das tarefas. A equipe foi organizada de forma colaborativa, com a divisão de funções entre os integrantes.
 
 ### Divisão de Papéis
 
-- **Product Owner:** Gabriela Schaper
-- **Scrum Master:** Matheus Romling
-- **Desenvolvedor — foco em artes:** Gustavo Norberto
-- **Desenvolvedor — foco em organização:** Renato Teixeira
-- **Desenvolvedor — foco em código:** Lucas Marçal
+- **Product Owner:** Gabriela Schaper Soriano Veiga
+- **Scrum Master:** Matheus Romling Rotheia Almeida
+- **Desenvolvedor — foco em artes:** Gustavo Norberto Medeiros de Souza
+- **Desenvolvedor — foco em organização:** Renato Teixeira Miranda Guimarães
+- **Desenvolvedor — foco em código:** Lucas Marçal Vilela
 
 As atividades foram subdivididas em tarefas menores, que foram distribuídas entre os integrantes da equipe. Também foram realizadas reuniões semanais de realinhamento para acompanhar o andamento do projeto e garantir uma distribuição equilibrada das atividades.
 
@@ -388,7 +388,7 @@ O **Miro** foi utilizado como espaço principal de organização do trabalho e p
 
 O **Figma** foi utilizado para a criação dos wireframes, desenvolvimento do User Flow e elaboração do protótipo funcional da aplicação.
 
-O **Chat GPT** foi utilizado na criação das imagens das personas.
+O **ChatGPT** foi utilizado na criação das imagens das personas.
 
 O **Canva** foi utilizado para a elaboração da apresentação do trabalho e exposição dos resultados desenvolvidos.
 
