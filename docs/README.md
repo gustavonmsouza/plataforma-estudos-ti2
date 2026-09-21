@@ -1,6 +1,6 @@
 # Introdução
 
-* **Projeto:** Plataforma de Estudos - Plataforma web para apoiar alunos e professores
+* **Projeto:** Quorbe
 * **Repositório GitHub:** (https://github.com/gustavonmsouza/plataforma-estudos-ti2)
 * **Membros da equipe:**
   
@@ -265,7 +265,7 @@ As histórias foram organizadas considerando os perfis de **Maria**, **Bernardo*
 
 ### User Story Map
 
-<img src="images/user-story-map.jpg" alt="User Story Map - Plataforma de Estudos" width="1000">
+<img src="images/user-story-map.jpg" alt="User Story Map - Quorbe" width="1000">
 
 ### Definição do MVP
 
