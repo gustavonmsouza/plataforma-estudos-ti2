@@ -20,7 +20,7 @@
 
 ## Resumo
 
-A Plataforma de Estudos é uma aplicação web desenvolvida para auxiliar alunos e professores na organização e acompanhamento das atividades acadêmicas. A plataforma permite o gerenciamento de tarefas, turmas, grupos e notas, além de disponibilizar recursos de acompanhamento do progresso dos alunos.
+A Quorbe é uma aplicação web desenvolvida para auxiliar alunos e professores na organização e acompanhamento das atividades acadêmicas. A plataforma permite o gerenciamento de tarefas, turmas, grupos e notas, além de disponibilizar recursos de acompanhamento do progresso dos alunos.
 Para os alunos, a plataforma também oferece um sistema de gamificação baseado em pontos, conquistas e sequência de estudos, permitindo utilizar os pontos acumulados em uma loja de cosméticos integrada ao perfil. Para os professores, são disponibilizados recursos para criação e acompanhamento de tarefas e gerenciamento de turmas e grupos.
 
 ## Problema
@@ -30,7 +30,7 @@ Além disso, o projeto considera a necessidade de incentivar a participação e 
 
 ## Solução proposta
 
-A solução proposta consiste no desenvolvimento de uma aplicação web de estudos que reúne, em um único ambiente, funcionalidades voltadas para alunos e professores. A plataforma disponibiliza recursos como calendário, gerenciamento e acompanhamento de tarefas, turmas, grupos e notas, permitindo que os usuários organizem e acompanhem suas atividades acadêmicas.
+A solução proposta consiste no desenvolvimento da Quorbe que reúne, em um único ambiente, funcionalidades voltadas para alunos e professores. A plataforma disponibiliza recursos como calendário, gerenciamento e acompanhamento de tarefas, turmas, grupos e notas, permitindo que os usuários organizem e acompanhem suas atividades acadêmicas.
 Para os alunos, a solução também conta com recursos de gamificação, como pontos, conquistas e sequência de estudos. Os pontos acumulados podem ser utilizados na loja de cosméticos integrada à plataforma. Já os professores possuem recursos relacionados ao gerenciamento de turmas e ao acompanhamento das tarefas e atividades dos alunos.
 
 ## Arquitetura da solução
