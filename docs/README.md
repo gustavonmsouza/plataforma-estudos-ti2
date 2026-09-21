@@ -6,7 +6,7 @@
   
   * [Gabriela Schaper Soriano Veiga] (https://github.com/GabiScha)
   * [Gustavo Norberto Medeiros de Souza] (https://github.com/gustavonmsouza)
-  * [Lucas Marçal Vilela]
+  * [Lucas Marçal Vilela] (https://github.com/lucasmarcalvilela-crypto)
   * [Matheus Romling Rotheia Almeida] (https://github.com/Matheus-Romling)
   * [Renato Teixeira Miranda Guimarães] (https://github.com/Servor234)
 
