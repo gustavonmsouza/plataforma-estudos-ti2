@@ -1,4 +1,4 @@
-# Plataforma de Estudos - Apoio aos estudos e professores
+# Quorbe
 
 ## Informações gerais
 
