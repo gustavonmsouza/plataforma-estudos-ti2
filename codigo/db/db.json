@@ -1,25 +1,248 @@
 {
   "usuarios": [
     {
-      "id": 1,
-      "login": "admin",
-      "senha": "123",
-      "nome": "Administrador do Sistema",
-      "email": "admin@abc.com"
+      "id": "1",
+      "usuario": "lucas.silva",
+      "nome": "Lucas Silva",
+      "email": "lucas@email.com",
+      "senha": "123456",
+      "foto": "foto-lucas.jpg",
+      "funcao": "aluno",
+      "matricula": "ALU-2026-001",
+      "creditos": 580,
+      "sequenciaEstudos": 5,
+      "cosmeticoEquipadoId": 1,
+      "turmasIds": [
+        1,
+        2
+      ]
     },
     {
-      "id": 2,
-      "login": "user",
-      "senha": "123",
-      "nome": "Usuario Comum",
-      "email": "user@abc.com"
+      "id": "2",
+      "usuario": "bruno.costa",
+      "nome": "Bruno Costa",
+      "email": "bruno@email.com",
+      "senha": "123456",
+      "foto": "foto-bruno.jpg",
+      "funcao": "aluno",
+      "matricula": "ALU-2026-002",
+      "creditos": 210,
+      "sequenciaEstudos": 2,
+      "cosmeticoEquipadoId": null,
+      "turmasIds": [
+        1
+      ]
     },
     {
-      "login": "rommel",
-      "senha": "123",
-      "nome": "Rommel",
-      "email": "rommel@gmail.com",
-      "id": 3
+      "id": "3",
+      "usuario": "camila.rocha",
+      "nome": "Camila Rocha",
+      "email": "camila@email.com",
+      "senha": "123456",
+      "foto": "foto-camila.jpg",
+      "funcao": "aluno",
+      "matricula": "ALU-2026-003",
+      "creditos": 430,
+      "sequenciaEstudos": 7,
+      "cosmeticoEquipadoId": 2,
+      "turmasIds": [
+        1,
+        2
+      ]
+    },
+    {
+      "id": "4",
+      "usuario": "fernanda.alves",
+      "nome": "Fernanda Alves Martins",
+      "email": "fernanda@email.com",
+      "senha": "123456",
+      "foto": "foto-fernanda.jpg",
+      "funcao": "professor",
+      "materia": "Matemática",
+      "creditos": 150,
+      "turmasIds": [
+        1,
+        2
+      ]
     }
-  ]
+  ],
+  "turmas": [
+    {
+      "id": "1",
+      "nome": "Turma A",
+      "professorId": 4
+    },
+    {
+      "id": "2",
+      "nome": "Turma B",
+      "professorId": 4
+    }
+  ],
+  "grupos": [
+    {
+      "id": "1",
+      "nome": "Grupo X",
+      "turmaId": 1
+    },
+    {
+      "id": "2",
+      "nome": "Grupo Y",
+      "turmaId": 1
+    }
+  ],
+  "gruposComponentes": [
+    {
+      "id": "1",
+      "grupoId": 1,
+      "alunoId": 1
+    },
+    {
+      "id": "2",
+      "grupoId": 1,
+      "alunoId": 2
+    },
+    {
+      "id": "3",
+      "grupoId": 2,
+      "alunoId": 3
+    }
+  ],
+  "tarefas": [
+    {
+      "id": "1",
+      "nome": "Exercícios de Álgebra",
+      "descricao": "Resolver os exercícios da página 45 a 47 do manual.",
+      "dataPrazo": "2026-10-15T23:59:00Z",
+      "notaMaxima": 20,
+      "materia": "Matemática",
+      "turmaId": 1,
+      "professorId": 4,
+      "grupoId": 1
+    },
+    {
+      "id": "2",
+      "nome": "Geometria Espacial",
+      "descricao": "Resolver os problemas práticos de cálculo de volume.",
+      "dataPrazo": "2026-10-20T23:59:00Z",
+      "notaMaxima": 30,
+      "materia": "Matemática",
+      "turmaId": 1,
+      "professorId": 4,
+      "grupoId": 1
+    },
+    {
+      "id": "3",
+      "nome": "Estudo de Funções",
+      "descricao": "Análise gráfica e modelagem de funções de segundo grau.",
+      "dataPrazo": "2026-10-25T23:59:00Z",
+      "notaMaxima": 50,
+      "materia": "Matemática",
+      "turmaId": 1,
+      "professorId": 4,
+      "grupoId": 2
+    }
+  ],
+  "submissoesTarefas": [
+    {
+      "id": "1",
+      "tarefaId": 1,
+      "alunoId": 1,
+      "resolucao": "Resolução dos exercícios da pág 45 em anexo.",
+      "estado": "avaliado",
+      "notaObtida": 18,
+      "dataEnvio": "2026-10-10T14:30:00Z"
+    },
+    {
+      "id": "2",
+      "tarefaId": 2,
+      "alunoId": 1,
+      "resolucao": "Em andamento...",
+      "estado": "em_progresso",
+      "notaObtida": null,
+      "dataEnvio": null
+    },
+    {
+      "id": "3",
+      "tarefaId": 3,
+      "alunoId": 3,
+      "resolucao": "Resolução da análise gráfica enviada.",
+      "estado": "pendente",
+      "notaObtida": null,
+      "dataEnvio": "2026-10-12T09:15:00Z"
+    },
+    {
+      "tarefaId": 1,
+      "alunoId": 2,
+      "resolucao": "Resolução do Bruno enviada via terminal.",
+      "estado": "pendente",
+      "notaObtida": null,
+      "dataEnvio": "2026-10-01T10:00:00Z",
+      "id": "nu3yxxEdIzQ"
+    }
+  ],
+  "cosmeticos": [
+    {
+      "id": "1",
+      "nome": "Boné Escolar",
+      "precoCreditos": 150,
+      "icone": "bone.png"
+    },
+    {
+      "id": "2",
+      "nome": "Mochila Dourada",
+      "precoCreditos": 300,
+      "icone": "mochila.png"
+    }
+  ],
+  "cosmeticosUsuarios": [
+    {
+      "id": "1",
+      "usuarioId": 1,
+      "cosmeticoId": 1,
+      "dataAdquirido": "2026-09-01T10:00:00Z"
+    },
+    {
+      "id": "2",
+      "usuarioId": 3,
+      "cosmeticoId": 2,
+      "dataAdquirido": "2026-09-15T16:20:00Z"
+    }
+  ],
+  "conquistas": [
+    {
+      "id": "1",
+      "nome": "Primeiro passo",
+      "descricao": "Complete sua primeira atividade",
+      "icone": "primeiro-passo.png",
+      "cosmeticoId": 1
+    },
+    {
+      "id": "2",
+      "nome": "Semana de foco",
+      "descricao": "Estude por 7 dias consecutivos",
+      "icone": "semana-foco.png",
+      "cosmeticoId": 2
+    }
+  ],
+  "conquistasUsuarios": [
+    {
+      "id": "1",
+      "usuarioId": 1,
+      "conquistaId": 1,
+      "completou": true
+    },
+    {
+      "id": "2",
+      "usuarioId": 1,
+      "conquistaId": 2,
+      "completou": false
+    },
+    {
+      "id": "3",
+      "usuarioId": 3,
+      "conquistaId": 1,
+      "completou": true
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
