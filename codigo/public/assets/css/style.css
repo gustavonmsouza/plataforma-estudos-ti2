@@ -4,9 +4,14 @@ body {
   margin: 0;
 }
 
+body {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+}
+
 main {
-  height: 100vh;   /* fallback */
-  height: 100dvh;  /* altura real da tela (inclusive no celular) */
+  height: 100vh;
+  height: 100dvh;
   overflow-x: auto;
   overflow-y: hidden;
 }
@@ -15,8 +20,51 @@ main {
   outline: 0;
 }
 
-/* Ícones do sprite SVG */
 .bi {
   vertical-align: -0.125em;
   fill: currentColor;
+}
+
+.barra-info {
+  background: var(--cor-primaria);
+  color: var(--cor-sobre-primaria);
+}
+
+a {
+  color: var(--cor-secundaria);
+}
+.btn-secondary {
+  --bs-btn-bg: var(--cor-secundaria);
+  --bs-btn-border-color: var(--cor-secundaria);
+  --bs-btn-color: var(--cor-sobre-secundaria);
+  --bs-btn-hover-bg: var(--cor-secundaria-hover);
+  --bs-btn-hover-border-color: var(--cor-secundaria-hover);
+  --bs-btn-hover-color: var(--cor-sobre-secundaria);
+}
+
+.badge-destaque {
+  background: var(--cor-terciaria);
+  color: var(--cor-sobre-terciaria);
+}
+.card {
+  border-top: 4px solid var(--cor-terciaria);
+}
+.sidebar {
+  background: var(--cor-superficie);
+  color: var(--cor-texto);
+}
+.sidebar .nav-link {
+  color: var(--cor-texto);
+}
+.sidebar .nav-link:hover {
+  background: var(--cor-borda);
+}
+
+.sidebar .nav-link.active {
+  background: var(--cor-primaria);
+  color: var(--cor-sobre-primaria);
+}
+
+.sidebar .link-body-emphasis {
+  color: var(--cor-texto) !important;
 }
