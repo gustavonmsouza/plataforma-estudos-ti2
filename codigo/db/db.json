@@ -12,7 +12,10 @@
       "orbes": 580,
       "sequenciaEstudos": 5,
       "cosmeticoEquipadoId": 1,
-      "turmasIds": [1, 2]
+      "turmasIds": [
+        1,
+        2
+      ]
     },
     {
       "id": 2,
@@ -26,7 +29,9 @@
       "orbes": 210,
       "sequenciaEstudos": 2,
       "cosmeticoEquipadoId": null,
-      "turmasIds": [1]
+      "turmasIds": [
+        1
+      ]
     },
     {
       "id": 3,
@@ -40,7 +45,10 @@
       "orbes": 430,
       "sequenciaEstudos": 7,
       "cosmeticoEquipadoId": 2,
-      "turmasIds": [1, 2]
+      "turmasIds": [
+        1,
+        2
+      ]
     },
     {
       "id": 4,
@@ -52,7 +60,17 @@
       "funcao": "professor",
       "materia": "Matemática",
       "orbes": 150,
-      "turmasIds": [1, 2]
+      "turmasIds": [
+        1,
+        2
+      ]
+    },
+    {
+      "login": "User",
+      "senha": "1234",
+      "nome": "User Nome",
+      "email": "user@email.com",
+      "id": 5
     }
   ],
   "turmas": [
