@@ -76,13 +76,18 @@
   "turmas": [
     {
       "id": 1,
-      "nome": "Turma A",
+      "nome": "Turma Ab",
       "professorId": 4
     },
     {
       "id": 2,
       "nome": "Turma B",
       "professorId": 4
+    },
+    {
+      "nome": "Turma Z",
+      "professorId": 4,
+      "id": 3
     }
   ],
   "grupos": [

@@ -1,0 +1,89 @@
+:root {
+  --bs-body-bg: var(--cor-fundo);
+  --bs-body-color: var(--cor-texto);
+  --bs-border-color: var(--cor-borda);
+  --bs-primary: var(--cor-primaria);
+  --bs-link-color: var(--cor-secundaria);
+}
+
+.btn-primary {
+  --bs-btn-bg: var(--cor-primaria);
+  --bs-btn-border-color: var(--cor-primaria);
+  --bs-btn-color: var(--cor-sobre-primaria);
+  --bs-btn-hover-bg: var(--cor-primaria-hover);
+  --bs-btn-hover-border-color: var(--cor-primaria-hover);
+  --bs-btn-hover-color: var(--cor-sobre-primaria);
+  --bs-btn-active-bg: var(--cor-primaria-hover);
+  --bs-btn-active-border-color: var(--cor-primaria-hover);
+  --bs-btn-active-color: var(--cor-sobre-primaria);
+}
+
+.btn-secondary {
+  --bs-btn-active-bg: var(--cor-secundaria-hover);
+  --bs-btn-active-border-color: var(--cor-secundaria-hover);
+  --bs-btn-active-color: var(--cor-sobre-secundaria);
+}
+
+.texto-suave {
+  color: color-mix(in srgb, var(--cor-texto) 65%, var(--cor-fundo));
+}
+
+.abas {
+  --bs-nav-underline-link-active-color: var(--cor-texto);
+  --bs-nav-link-color: color-mix(in srgb, var(--cor-texto) 65%, var(--cor-fundo));
+  --bs-nav-link-hover-color: var(--cor-texto);
+  border-bottom: 1px solid var(--cor-borda);
+}
+.abas .nav-link.active {
+  border-bottom-color: var(--cor-primaria);
+}
+
+.list-group {
+  --bs-list-group-bg: var(--cor-superficie);
+  --bs-list-group-color: var(--cor-texto);
+  --bs-list-group-border-color: var(--cor-borda);
+}
+
+.list-group-item {
+  padding: 1rem 1.25rem;
+}
+
+.btn-acao {
+  color: color-mix(in srgb, var(--cor-texto) 65%, var(--cor-fundo));
+  border: 0;
+}
+.btn-acao:hover {
+  background: var(--cor-borda);
+  color: var(--cor-texto);
+}
+.btn-acao-perigo:hover {
+  color: var(--cor-terciaria);
+}
+
+.modal-content {
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+}
+.modal-header,
+.modal-footer {
+  border-color: var(--cor-borda);
+}
+.modal-content .btn-close {
+  filter: none;
+  color: var(--cor-texto);
+}
+
+.form-control,
+.form-select {
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  border-color: var(--cor-borda);
+}
+.form-control:focus,
+.form-select:focus {
+  background-color: var(--cor-superficie);
+  color: var(--cor-texto);
+  border-color: var(--cor-primaria);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--cor-primaria) 30%, transparent);
+}
