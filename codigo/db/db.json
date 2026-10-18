@@ -14,7 +14,8 @@
       "cosmeticoEquipadoId": 1,
       "turmasIds": [
         1,
-        2
+        2,
+        3
       ]
     },
     {
@@ -76,18 +77,14 @@
   "turmas": [
     {
       "id": 1,
-      "nome": "Turma Ab",
-      "professorId": 4
+      "nome": "Turma A",
+      "professorId": 4,
+      "materia": ""
     },
     {
       "id": 2,
       "nome": "Turma B",
       "professorId": 4
-    },
-    {
-      "nome": "Turma Z",
-      "professorId": 4,
-      "id": 3
     }
   ],
   "grupos": [

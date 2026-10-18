@@ -62,12 +62,20 @@ function desenhar() {
     const qtd = contarAlunos(t.id);
 
     const item = document.createElement('div');
-    item.className = 'list-group-item d-flex justify-content-between align-items-center';
+    // Adicionamos 'list-group-item-action' para ter o efeito de hover ao passar o mouse
+    item.className = 'list-group-item list-group-item-action d-flex justify-content-between align-items-center py-3';
+    item.style.cursor = 'pointer'; // Muda o cursor para "mãozinha"
+
+    // Evento para redirecionar quando a linha for clicada
+    item.addEventListener('click', () => {
+      window.location.href = 'turma_detalhes.html?id=' + t.id;
+    });
 
     const info = document.createElement('div');
     const nome = document.createElement('div');
-    nome.className = 'fw-semibold';
+    nome.className = 'fw-semibold mb-1'; // Pequeno espaçamento
     nome.textContent = t.nome;
+    
     const detalhe = document.createElement('small');
     detalhe.className = 'texto-suave';
     detalhe.textContent =
@@ -75,21 +83,29 @@ function desenhar() {
     info.append(nome, detalhe);
 
     const acoes = document.createElement('div');
-    acoes.className = 'd-flex gap-1';
+    acoes.className = 'd-flex gap-2';
 
     const btnEditar = document.createElement('button');
-    btnEditar.className = 'btn btn-sm btn-acao';
+    btnEditar.className = 'btn btn-sm btn-acao btn-outline-secondary';
     btnEditar.title = 'Editar turma';
     btnEditar.setAttribute('aria-label', 'Editar ' + t.nome);
     btnEditar.innerHTML = '<i class="bi bi-pencil"></i>';
-    btnEditar.addEventListener('click', () => abrirModal(t));
+    btnEditar.addEventListener('click', (e) => {
+      // Impede que o clique no botão ative o redirecionamento da linha
+      e.stopPropagation(); 
+      abrirModal(t);
+    });
 
     const btnExcluir = document.createElement('button');
-    btnExcluir.className = 'btn btn-sm btn-acao btn-acao-perigo';
+    btnExcluir.className = 'btn btn-sm btn-acao btn-outline-danger';
     btnExcluir.title = 'Excluir turma';
     btnExcluir.setAttribute('aria-label', 'Excluir ' + t.nome);
     btnExcluir.innerHTML = '<i class="bi bi-trash"></i>';
-    btnExcluir.addEventListener('click', () => excluir(t));
+    btnExcluir.addEventListener('click', (e) => {
+      // Impede que o clique no botão ative o redirecionamento da linha
+      e.stopPropagation(); 
+      excluir(t);
+    });
 
     acoes.append(btnEditar, btnExcluir);
     item.append(info, acoes);
