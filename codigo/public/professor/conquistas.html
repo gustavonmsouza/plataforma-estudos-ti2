@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="pt-br" data-tema="grafite">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quorbe | Gerenciar Conquistas</title>
+
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="/assets/css/tokens.css">
+  <link rel="stylesheet" href="/assets/css/style.css">
+
+  <script src="/assets/js/auth.js"></script>
+  <script>
+    exigirFuncao('professor');
+
+    const usuarioTema = usuarioLogado();
+
+    if (usuarioTema) {
+      const mapaTemas = {
+        1: 'oceano',
+        2: 'ambar',
+        3: 'esmeralda'
+      };
+
+      const tema =
+        mapaTemas[usuarioTema.cosmeticoEquipadoId] || 'grafite';
+
+      document.documentElement.setAttribute('data-tema', tema);
+    }
+  </script>
+
+  <style>
+    .pagina-conquistas {
+      min-height: 100vh;
+      background-color: var(--cor-fundo);
+      color: var(--cor-texto);
+    }
+
+    .card-conquista {
+      background-color: var(--cor-superficie);
+      border: 1px solid var(--cor-borda);
+      border-radius: 12px;
+      color: var(--cor-texto);
+      height: 100%;
+    }
+
+    .icone-conquista {
+      width: 64px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 16px;
+      border-radius: 50%;
+      background-color: var(--cor-fundo);
+      font-size: 30px;
+    }
+
+    .campo-formulario {
+      background-color: var(--cor-superficie);
+      color: var(--cor-texto);
+      border-color: var(--cor-borda);
+    }
+
+    .campo-formulario:focus {
+      background-color: var(--cor-superficie);
+      color: var(--cor-texto);
+    }
+
+    .texto-secundario {
+      color: var(--cor-texto);
+      opacity: 0.75;
+    }
+
+    .botao-principal {
+      background-color: var(--cor-secundaria);
+      color: var(--cor-sobre-secundaria);
+      border: none;
+    }
+
+    .botao-principal:hover {
+      opacity: 0.85;
+      color: var(--cor-sobre-secundaria);
+    }
+  </style>
+</head>
+
+<body>
+  <main class="pagina-conquistas p-4">
+    <div class="container">
+
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
+        <div>
+          <a
+            href="home.html"
+            class="text-decoration-none texto-secundario"
+          >
+            ← Voltar para a página inicial
+          </a>
+
+          <h1 class="fw-bold mt-3">🏆 Gerenciar Conquistas</h1>
+
+          <p class="texto-secundario">
+            Cadastre e gerencie as conquistas disponíveis para os alunos.
+          </p>
+        </div>
+      </div>
+
+      <section class="card-conquista p-4 mb-4">
+        <h2 class="h5 fw-bold mb-3" id="tituloFormulario">
+          Cadastrar conquista
+        </h2>
+
+        <form id="formConquista">
+          <input type="hidden" id="conquistaId">
+
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label for="nome" class="form-label">
+                Nome da conquista
+              </label>
+
+              <input
+                type="text"
+                id="nome"
+                class="form-control campo-formulario"
+                maxlength="80"
+                required
+              >
+            </div>
+
+            <div class="col-md-6">
+              <label for="icone" class="form-label">
+                Ícone ou emoji
+              </label>
+
+              <input
+                type="text"
+                id="icone"
+                class="form-control campo-formulario"
+                placeholder="Ex.: 🏆"
+                maxlength="100"
+                required
+              >
+            </div>
+
+            <div class="col-md-8">
+              <label for="descricao" class="form-label">
+                Descrição
+              </label>
+
+              <textarea
+                id="descricao"
+                class="form-control campo-formulario"
+                rows="2"
+                maxlength="250"
+                required
+              ></textarea>
+            </div>
+
+            <div class="col-md-4">
+              <label for="cosmeticoId" class="form-label">
+                ID do cosmético associado
+              </label>
+
+              <select
+                id="cosmeticoId"
+                class="form-select campo-formulario"
+              >
+                <option value="">Nenhum cosmético</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="d-flex gap-2 mt-4 flex-wrap">
+            <button
+              type="submit"
+              class="btn botao-principal"
+              id="botaoSalvar"
+            >
+              Cadastrar conquista
+            </button>
+
+            <button
+              type="button"
+              class="btn btn-outline-secondary"
+              id="botaoCancelar"
+              hidden
+            >
+              Cancelar edição
+            </button>
+          </div>
+
+          <div
+            id="mensagemFormulario"
+            class="mt-3"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </form>
+      </section>
+
+      <section>
+        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
+          <h2 class="h4 fw-bold mb-0">
+            Conquistas cadastradas
+          </h2>
+
+          <span id="totalConquistas" class="texto-secundario">
+            Carregando...
+          </span>
+        </div>
+
+        <div class="row g-3 mb-4">
+          <div class="col-md-8">
+            <label for="pesquisa" class="form-label">
+              Pesquisar conquistas
+            </label>
+
+            <input
+              type="search"
+              id="pesquisa"
+              class="form-control campo-formulario"
+              placeholder="Digite o nome ou a descrição..."
+            >
+          </div>
+
+          <div class="col-md-4">
+            <label for="filtroCosmetico" class="form-label">
+              Filtrar por cosmético
+            </label>
+
+            <select
+              id="filtroCosmetico"
+              class="form-select campo-formulario"
+            >
+              <option value="todos">Todos</option>
+              <option value="com">Com cosmético associado</option>
+              <option value="sem">Sem cosmético associado</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          id="mensagemLista"
+          class="texto-secundario mb-3"
+          role="status"
+          aria-live="polite"
+        ></div>
+
+        <div id="listaConquistas" class="row g-3"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <script src="/assets/js/conquistas.js"></script>
+</body>
+</html>
