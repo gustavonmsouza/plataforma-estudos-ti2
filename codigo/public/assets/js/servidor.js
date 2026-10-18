@@ -222,7 +222,136 @@ app.post("/api/resgates", async (req, res) => {
     }
 });
 
+
+
+// API REST genérica para os recursos do db.json.
+// Mantém compatibilidade com as páginas antigas que consultavam o JSON Server
+// (/usuarios, /turmas, /conquistas etc.), mas usando este mesmo servidor e porta.
+app.use(async (req, res, next) => {
+    try {
+        // As rotas específicas da loja (/api/...) foram registradas acima.
+        if (req.path.startsWith("/api/")) return next();
+
+        const segmentos = req.path.split("/").filter(Boolean);
+        if (segmentos.length < 1 || segmentos.length > 2) return next();
+
+        const nomeColecao = segmentos[0];
+        const idSolicitado = segmentos[1];
+        const dados = await lerDB();
+        if (!Object.prototype.hasOwnProperty.call(dados, nomeColecao) || !Array.isArray(dados[nomeColecao])) {
+            return next();
+        }
+
+        const colecao = dados[nomeColecao];
+        const comparar = (a, b) => String(a ?? "") === String(b ?? "");
+
+        if (req.method === "GET" && idSolicitado !== undefined) {
+            const registro = colecao.find(item => comparar(item.id, decodeURIComponent(idSolicitado)));
+            if (!registro) return res.status(404).json({ erro: "Registro não encontrado." });
+            return res.json(registro);
+        }
+
+        if (req.method === "GET") {
+            let resultado = colecao.filter(registro => Object.entries(req.query).every(([chave, valor]) => {
+                if (chave.startsWith("_")) return true;
+                let campo = chave;
+                let operador = "eq";
+                for (const sufixo of ["_like", "_gte", "_lte", "_ne", "_gt", "_lt"]) {
+                    if (chave.endsWith(sufixo)) {
+                        campo = chave.slice(0, -sufixo.length);
+                        operador = sufixo.slice(1);
+                        break;
+                    }
+                }
+                const atual = registro[campo];
+                const esperado = Array.isArray(valor) ? valor[0] : valor;
+                if (operador === "ne") return !comparar(atual, esperado);
+                if (operador === "like") return String(atual ?? "").toLowerCase().includes(String(esperado).toLowerCase());
+                if (["gte", "lte", "gt", "lt"].includes(operador)) {
+                    const a = Number(atual), b = Number(esperado);
+                    if (!Number.isFinite(a) || !Number.isFinite(b)) return false;
+                    if (operador === "gte") return a >= b;
+                    if (operador === "lte") return a <= b;
+                    if (operador === "gt") return a > b;
+                    return a < b;
+                }
+                return comparar(atual, esperado);
+            }));
+
+            const total = resultado.length;
+            const ordenar = req.query._sort;
+            if (ordenar) {
+                const campos = String(ordenar).split(",");
+                const ordens = String(req.query._order || "asc").split(",");
+                resultado.sort((a, b) => {
+                    for (let i = 0; i < campos.length; i++) {
+                        const av = a[campos[i]], bv = b[campos[i]];
+                        if (av === bv) continue;
+                        const comparacao = av == null ? -1 : bv == null ? 1 : (av > bv ? 1 : -1);
+                        return (ordens[i] || ordens[0] || "asc").toLowerCase() === "desc" ? -comparacao : comparacao;
+                    }
+                    return 0;
+                });
+            }
+
+            const inicio = req.query._start !== undefined ? Math.max(0, Number(req.query._start) || 0) : null;
+            const fim = req.query._end !== undefined ? Math.max(0, Number(req.query._end) || 0) : null;
+            if (inicio !== null || fim !== null) {
+                resultado = resultado.slice(inicio ?? 0, fim ?? undefined);
+            } else if (req.query._page !== undefined) {
+                const pagina = Math.max(1, Number(req.query._page) || 1);
+                const limite = Math.max(1, Number(req.query._limit) || 10);
+                resultado = resultado.slice((pagina - 1) * limite, pagina * limite);
+            } else if (req.query._limit !== undefined) {
+                resultado = resultado.slice(0, Math.max(0, Number(req.query._limit) || 0));
+            }
+            res.set("X-Total-Count", String(total));
+            return res.json(resultado);
+        }
+
+        if (req.method === "POST" && idSolicitado === undefined) {
+            if (!req.body || typeof req.body !== "object" || Array.isArray(req.body)) {
+                return res.status(400).json({ erro: "O corpo da requisição deve ser um objeto JSON." });
+            }
+            const novo = { ...req.body };
+            if (novo.id === undefined || novo.id === null || novo.id === "") {
+                novo.id = colecao.reduce((maior, item) => Math.max(maior, Number(item.id) || 0), 0) + 1;
+            }
+            colecao.push(novo);
+            await salvarDB(dados);
+            return res.status(201).json(novo);
+        }
+
+        if ((req.method === "PUT" || req.method === "PATCH") && idSolicitado !== undefined) {
+            const indice = colecao.findIndex(item => comparar(item.id, decodeURIComponent(idSolicitado)));
+            if (indice < 0) return res.status(404).json({ erro: "Registro não encontrado." });
+            const corpo = req.body && typeof req.body === "object" && !Array.isArray(req.body) ? req.body : {};
+            const atualizado = req.method === "PATCH"
+                ? { ...colecao[indice], ...corpo, id: colecao[indice].id }
+                : { ...corpo, id: corpo.id ?? colecao[indice].id };
+            colecao[indice] = atualizado;
+            await salvarDB(dados);
+            return res.json(atualizado);
+        }
+
+        if (req.method === "DELETE" && idSolicitado !== undefined) {
+            const indice = colecao.findIndex(item => comparar(item.id, decodeURIComponent(idSolicitado)));
+            if (indice < 0) return res.status(404).json({ erro: "Registro não encontrado." });
+            const removido = colecao.splice(indice, 1)[0];
+            await salvarDB(dados);
+            return res.json(removido);
+        }
+
+        return next();
+    } catch (erro) {
+        console.error("Erro na API REST genérica:", erro);
+        return res.status(500).json({ erro: "Não foi possível processar a requisição." });
+    }
+});
+
 app.listen(PORTA, () => {
-    console.log(`Quorbe disponível em http://localhost:${PORTA}/loja.html`);
+    console.log(`Quorbe disponível em http://localhost:${PORTA}/`);
+    console.log(`Loja de cosméticos: http://localhost:${PORTA}/loja.html`);
+    console.log(`API da loja: http://localhost:${PORTA}/api/dados`);
     console.log(`Banco de dados: ${caminhoDB}`);
 });

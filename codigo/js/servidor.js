@@ -132,10 +132,6 @@ app.delete("/api/cosmeticos/:id", exigirAdministrador, async (req, res) => {
         dados.cosmeticos = dados.cosmeticos.filter(c => Number(c.id) !== id);
         // Remove relações de posse do cosmético excluído.
         dados.cosmeticosUsuarios = dados.cosmeticosUsuarios.filter(rel => Number(rel.cosmeticoId) !== id);
-        // Limpa o cosmético equipado, se algum usuário o usava.
-        for (const usuario of dados.usuarios) {
-            if (Number(usuario.cosmeticoEquipadoId) === id) usuario.cosmeticoEquipadoId = null;
-        }
 
         await salvarDB(dados);
         res.json({ mensagem: "Cosmético excluído." });

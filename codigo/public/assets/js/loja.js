@@ -3,7 +3,6 @@ const mensagem = document.getElementById("mensagem");
 const saldoOrbes = document.getElementById("saldoOrbes");
 const modalCosmeticoEl = document.getElementById("modalCosmetico");
 const modalResgateEl = document.getElementById("modalResgate");
-const modalUsuarioEl = document.getElementById("modalUsuario");
 const modalExcluirCosmeticoEl = document.getElementById("modalExcluirCosmetico");
 
 let dados = { usuarios: [], cosmeticos: [], cosmeticosUsuarios: [] };
@@ -13,7 +12,6 @@ let cosmeticoParaExcluir = null;
 
 const modalCosmetico = bootstrap.Modal.getOrCreateInstance(modalCosmeticoEl);
 const modalResgate = bootstrap.Modal.getOrCreateInstance(modalResgateEl);
-const modalUsuario = bootstrap.Modal.getOrCreateInstance(modalUsuarioEl);
 const modalExcluirCosmetico = bootstrap.Modal.getOrCreateInstance(modalExcluirCosmeticoEl);
 
 function escaparHTML(valor) {
@@ -83,11 +81,27 @@ function usuarioDaSessao(dadosCarregados) {
   }
 }
 
+function configurarNavegacao() {
+  const professor = ["professor", "administrador", "admin"].includes(String(usuarioAtual?.funcao || "").trim().toLowerCase());
+  const base = professor ? "/professor/" : "/aluno/";
+  document.getElementById("navInicio").href = `${base}home.html`;
+  document.getElementById("navTarefas").href = `${base}tarefas.html`;
+  document.getElementById("navCalendario").href = `${base}calendario.html`;
+  document.getElementById("navPerfil").href = `${base}perfil.html`;
+  document.getElementById("navTurmas").href = "/professor/turmas.html";
+  document.getElementById("navGrupo").href = "/aluno/grupo.html";
+  document.getElementById("navRanking").href = "/aluno/ranking.html";
+  document.getElementById("itemTurmas").classList.toggle("d-none", !professor);
+  document.getElementById("itemGrupo").classList.toggle("d-none", professor);
+  document.getElementById("itemRanking").classList.toggle("d-none", professor);
+}
+
 function atualizarCabecalho() {
   document.getElementById("nomeUsuario").textContent = usuarioAtual?.nome || usuarioAtual?.usuario || usuarioAtual?.login || "Usuário";
   document.getElementById("funcaoUsuario").textContent = usuarioAtual?.funcao || "Sem função definida";
   document.getElementById("avatarUsuario").textContent = (usuarioAtual?.nome || usuarioAtual?.usuario || "Q").trim().charAt(0).toUpperCase();
   saldoOrbes.textContent = Number(usuarioAtual?.orbes || 0).toLocaleString("pt-BR");
+  configurarNavegacao();
   document.getElementById("botaoAdicionar").classList.toggle("d-none", !ehAdministrador());
   document.getElementById("textoCatalogo").textContent = ehAdministrador()
     ? "Modo de gerenciamento: professores e administradores podem adicionar, editar e excluir cosméticos."
@@ -95,44 +109,40 @@ function atualizarCabecalho() {
 }
 
 async function carregarDados() {
+  let sessao;
+  try {
+    sessao = JSON.parse(sessionStorage.getItem("usuarioCorrente") || "null");
+  } catch {
+    sessao = null;
+  }
+
+  if (!sessao || !sessao.funcao) {
+    window.location.replace("/index.html");
+    return;
+  }
+
   try {
     dados = await requisicao("/api/dados", { headers: {} });
-
     if (!Array.isArray(dados.usuarios) || !Array.isArray(dados.cosmeticos)) {
       throw new Error("A API não retornou os arrays usuarios e cosmeticos.");
     }
     if (!Array.isArray(dados.cosmeticosUsuarios)) dados.cosmeticosUsuarios = [];
 
-    const usuarioAutenticado = usuarioDaSessao(dados);
-    const idSalvo = Number(localStorage.getItem("quorbeUsuarioId"));
-    usuarioAtual = usuarioAutenticado ||
-      dados.usuarios.find(u => Number(u.id) === idSalvo) || null;
-
-    preencherSeletorUsuarios();
+    usuarioAtual = usuarioDaSessao(dados);
     if (!usuarioAtual) {
-      modalUsuario.show();
-      renderizarCosmeticos();
+      sessionStorage.removeItem("usuarioCorrente");
+      window.location.replace("/index.html");
       return;
     }
 
+    // Sincroniza os dados atuais (especialmente o saldo de Orbes) com o restante da plataforma.
+    sessionStorage.setItem("usuarioCorrente", JSON.stringify({ ...sessao, ...usuarioAtual }));
     atualizarCabecalho();
     renderizarCosmeticos();
   } catch (erro) {
     console.error("Erro ao carregar a loja:", erro);
     mostrarMensagem(erro.message, "danger");
   }
-}
-
-function preencherSeletorUsuarios() {
-  const seletor = document.getElementById("seletorUsuario");
-  seletor.innerHTML = "";
-  dados.usuarios.forEach(usuario => {
-    const opcao = document.createElement("option");
-    opcao.value = usuario.id;
-    opcao.textContent = `${usuario.nome || usuario.usuario || usuario.login || "Usuário"} — ${usuario.funcao || "sem função"} (ID ${usuario.id})`;
-    seletor.appendChild(opcao);
-  });
-  if (usuarioAtual) seletor.value = String(usuarioAtual.id);
 }
 
 function renderizarCosmeticos() {
@@ -166,10 +176,10 @@ function renderizarCosmeticos() {
             ${ehAdministrador() ? `
               <button type="button" class="btn btn-outline-primary btn-sm editar">Editar</button>
               <button type="button" class="btn btn-outline-danger btn-sm excluir">Excluir</button>
+            ` : possui ? `
+              <span class="badge text-bg-secondary">Na sua coleção</span>
             ` : `
-              <button type="button" class="btn ${possui ? "btn-owned" : "btn-primary"} w-100 resgatar" ${possui ? "disabled" : ""}>
-                ${possui ? "Resgatado ✓" : `Resgatar por ${preco.toLocaleString("pt-BR")} Orbes`}
-              </button>
+              <button type="button" class="btn btn-primary w-100 resgatar">Resgatar por ${preco.toLocaleString("pt-BR")} Orbes</button>
             `}
           </div>
         </div>
@@ -345,7 +355,7 @@ modalExcluirCosmeticoEl.addEventListener("hidden.bs.modal", () => {
 
 function abrirConfirmacaoResgate(cosmetico) {
   if (!usuarioAtual) {
-    modalUsuario.show();
+    window.location.replace("/index.html");
     return;
   }
   cosmeticoParaResgatar = cosmetico;
@@ -374,29 +384,10 @@ document.getElementById("confirmarResgate").addEventListener("click", async () =
   }
 });
 
-document.getElementById("usarUsuario").addEventListener("click", async () => {
-  const id = Number(document.getElementById("seletorUsuario").value);
-  if (!id) return;
-  localStorage.setItem("quorbeUsuarioId", String(id));
-  usuarioAtual = dados.usuarios.find(u => Number(u.id) === id) || null;
-  modalUsuario.hide();
-  atualizarCabecalho();
-  renderizarCosmeticos();
-});
-
-document.getElementById("trocarUsuario").addEventListener("click", () => {
-  preencherSeletorUsuarios();
-  modalUsuario.show();
-});
-
 document.getElementById("sair").addEventListener("click", event => {
   event.preventDefault();
-  localStorage.removeItem("quorbeUsuarioId");
-  usuarioAtual = null;
-  preencherSeletorUsuarios();
-  atualizarCabecalho();
-  modalUsuario.show();
+  sessionStorage.removeItem("usuarioCorrente");
+  window.location.replace("/index.html");
 });
-
 
 carregarDados();

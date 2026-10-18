@@ -1,0 +1,484 @@
+<!doctype html>
+<html lang="pt-br" data-tema="escuro">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Quorbe | Detalhes da Turma</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="/assets/css/tokens.css" />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    
+    <script src="/assets/js/auth.js"></script>
+    <script>
+        exigirFuncao('professor');
+    </script>
+    
+    <style>
+      .dashboard-card {
+        background: var(--cor-superficie);
+        border: 1px solid var(--cor-borda);
+        border-radius: 0.75rem;
+        color: var(--cor-texto);
+        height: 100%;
+      }
+      .list-group-item {
+        background-color: transparent;
+        border-color: var(--cor-borda);
+        color: var(--cor-texto);
+      }
+      .btn-custom-outline {
+        border-color: var(--cor-borda);
+        color: var(--cor-texto);
+      }
+      .btn-custom-outline:hover {
+        background-color: var(--cor-borda);
+        color: var(--cor-texto);
+      }
+      /* Modais */
+      .modal-content {
+        background-color: var(--cor-superficie);
+        color: var(--cor-texto);
+        border: 1px solid var(--cor-borda);
+      }
+      .modal-header, .modal-footer {
+        border-color: var(--cor-borda);
+      }
+      .form-control, .form-select {
+        background-color: var(--cor-fundo);
+        border-color: var(--cor-borda);
+        color: var(--cor-texto);
+      }
+      .form-control:focus, .form-select:focus {
+        background-color: var(--cor-fundo);
+        color: var(--cor-texto);
+        border-color: var(--cor-secundaria);
+        box-shadow: 0 0 0 0.25rem color-mix(in srgb, var(--cor-secundaria) 25%, transparent);
+      }
+      [data-tema="escuro"] .btn-close {
+        filter: invert(1) grayscale(100%) brightness(200%);
+      }
+      .status-badge {
+        font-size: 0.75rem;
+        padding: 0.35em 0.65em;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Ícones SVG (Mantidos para a barra) -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+      <symbol id="bootstrap" viewBox="0 0 118 94"><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"></path></symbol>
+      <symbol id="home" viewBox="0 0 16 16"><path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path></symbol>
+      <symbol id="speedometer2" viewBox="0 0 16 16"><path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"></path><path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"></path></symbol>
+      <symbol id="table" viewBox="0 0 16 16"><path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"></path></symbol>
+      <symbol id="grid" viewBox="0 0 16 16"><path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path></symbol>
+      <symbol id="people-circle" viewBox="0 0 16 16"><path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path><path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path></symbol>
+    </svg>
+
+    <main class="d-flex flex-nowrap" style="min-height: 100vh;">
+      
+      <!-- SIDEBAR PROFESSOR -->
+      <div class="d-flex flex-column flex-shrink-0 p-3 sidebar" style="width: 280px; background-color: var(--cor-superficie); color: var(--cor-texto);">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
+          <svg class="bi pe-none me-2" width="40" height="32" aria-hidden="true"><use href="#bootstrap"></use></svg>
+          <span class="fs-4" style="color: var(--cor-texto);">Quorbe</span>
+        </a>
+        <hr style="border-color: var(--cor-borda);" />
+        
+        <ul class="nav nav-pills flex-column mb-auto">
+          <li class="nav-item">
+            <a href="home.html" class="nav-link link-body-emphasis" style="color: var(--cor-texto) !important;">
+              <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use href="#home"></use></svg>
+              Página Inicial
+            </a>
+          </li>
+          <li>
+            <a href="tarefas.html" class="nav-link link-body-emphasis" style="color: var(--cor-texto) !important;">
+              <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use href="#speedometer2"></use></svg>
+              Tarefas
+            </a>
+          </li>
+          <!-- Turmas ATIVO aqui -->
+          <li>
+            <a href="turmas.html" class="nav-link active" aria-current="page" style="background-color: var(--cor-secundaria); color: var(--cor-sobre-secundaria);">
+              <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use href="#table"></use></svg>
+              Turmas
+            </a>
+          </li>
+          <li>
+            <a href="calendario.html" class="nav-link link-body-emphasis" style="color: var(--cor-texto) !important;">
+              <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use href="#grid"></use></svg>
+              Calendário
+            </a>
+          </li>
+          <li>
+            <a href="perfil.html" class="nav-link link-body-emphasis" style="color: var(--cor-texto) !important;">
+              <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor"><use href="#people-circle"></use></svg>
+              Perfil
+            </a>
+          </li>
+        </ul>
+        <hr style="border-color: var(--cor-borda);" />
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false" style="color: var(--cor-texto) !important;">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2" id="imgUsuarioBarra" />
+            <strong id="nomeUsuarioBarra">Professor</strong>
+          </a>
+          <ul class="dropdown-menu text-small shadow" style="background-color: var(--cor-superficie);">
+            <li><a class="dropdown-item" href="perfil.html" style="color: var(--cor-texto);">Perfil</a></li>
+            <li><hr class="dropdown-divider" style="border-color: var(--cor-borda);" /></li>
+            <li><a class="dropdown-item" href="#" onclick="sair()" style="color: var(--cor-texto);">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- CONTEÚDO PRINCIPAL (EXIBIÇÃO DA TURMA) -->
+      <div class="flex-grow-1 p-4 overflow-auto" style="background-color: var(--cor-fundo); color: var(--cor-texto);">
+        
+        <!-- Navegação / Breadcrumb -->
+        <a href="turmas.html" class="text-decoration-none d-inline-flex align-items-center mb-3" style="color: var(--cor-texto); opacity: 0.8;">
+          <i class="bi bi-arrow-left me-2"></i> Voltar para Turmas
+        </a>
+
+        <!-- Header da Turma -->
+        <div class="d-flex justify-content-between align-items-center mb-4 pb-3 border-bottom" style="border-color: var(--cor-borda) !important;">
+          <div>
+            <h1 class="h3 mb-1 fw-bold" id="tituloTurma">Carregando Turma...</h1>
+            <p class="mb-0 texto-suave" id="subtituloTurma"><i class="bi bi-book me-1"></i> Carregando...</p>
+          </div>
+          <div class="d-flex gap-2">
+            <!-- Botão Grupos -->
+            <button class="btn btn-custom-outline d-flex align-items-center" id="btnAcessarGrupos">
+              <i class="bi bi-people me-2"></i> Ver Grupos
+            </button>
+            <!-- Botão Configurações -->
+            <button class="btn d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modalConfigTurma" style="background-color: var(--cor-secundaria); color: var(--cor-sobre-secundaria);">
+              <i class="bi bi-gear me-2"></i> Configurações
+            </button>
+          </div>
+        </div>
+
+        <div id="alerta" class="alert d-none"></div>
+
+        <div class="row g-4">
+          
+          <!-- COLUNA 1: ALUNOS -->
+          <div class="col-lg-6">
+            <div class="dashboard-card p-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">Alunos (<span id="qtdAlunos">0</span>)</h5>
+                <button class="btn btn-sm btn-outline-success d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#modalAdicionarAluno">
+                  <i class="bi bi-person-plus me-1"></i> Adicionar
+                </button>
+              </div>
+              
+              <div class="list-group list-group-flush" id="listaAlunos">
+                <div class="text-center py-4 texto-suave">
+                  <div class="spinner-border spinner-border-sm me-2" role="status"></div> Carregando alunos...
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- COLUNA 2: ATIVIDADES/QUESTS -->
+          <div class="col-lg-6">
+            <div class="dashboard-card p-4">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <h5 class="fw-bold mb-0">Atividades da Turma</h5>
+                
+                <!-- NOVO BOTÃO AQUI -->
+                <a href="tarefas.html" class="btn btn-sm d-flex align-items-center" style="border: 1px solid var(--cor-secundaria); color: var(--cor-secundaria);">
+                  <i class="bi bi-plus-lg me-1"></i> Atribuir Tarefa
+                </a>
+                
+              </div>
+              
+              <div class="list-group list-group-flush" id="listaAtividades">
+                <div class="text-center py-4 texto-suave">
+                  <div class="spinner-border spinner-border-sm me-2" role="status"></div> Carregando atividades...
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+    <!-- MODAL: Configurações da Turma -->
+    <div class="modal fade" id="modalConfigTurma" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content" id="formConfigTurma">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5 fw-bold"><i class="bi bi-gear me-2"></i>Configurações da Turma</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="mb-3">
+              <label for="inputNomeTurma" class="form-label fw-medium">Nome da Turma</label>
+              <input type="text" class="form-control" id="inputNomeTurma" required maxlength="60" />
+            </div>
+            <div class="mb-3">
+              <label for="inputMateriaTurma" class="form-label fw-medium">Matéria / Disciplina</label>
+              <input type="text" class="form-control" id="inputMateriaTurma" placeholder="Ex: Matemática" />
+            </div>
+          </div>
+          <div class="modal-footer justify-content-between">
+            <button type="button" class="btn btn-outline-danger" id="btnExcluirTurma">Excluir Turma</button>
+            <div>
+              <button type="button" class="btn btn-link text-decoration-none" data-bs-dismiss="modal" style="color: var(--cor-texto);">Cancelar</button>
+              <button type="submit" class="btn" style="background-color: var(--cor-secundaria); color: var(--cor-sobre-secundaria);">Salvar Alterações</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <!-- MODAL: Adicionar Aluno -->
+    <div class="modal fade" id="modalAdicionarAluno" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content" id="formAdicionarAluno">
+          <div class="modal-header">
+            <h2 class="modal-title fs-5 fw-bold"><i class="bi bi-person-plus me-2"></i>Adicionar Aluno</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="mb-3">
+              <label for="selectAlunoNovo" class="form-label fw-medium">Selecione o Aluno</label>
+              <select class="form-select" id="selectAlunoNovo" required>
+                <option value="">Carregando lista...</option>
+              </select>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-link text-decoration-none" data-bs-dismiss="modal" style="color: var(--cor-texto);">Cancelar</button>
+            <button type="submit" class="btn btn-success">Vincular Aluno</button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+      // -------------------------------------------------------------
+      // LÓGICA DE INTERAÇÃO (Conectado ao json-server)
+      // -------------------------------------------------------------
+      
+      const u = usuarioLogado();
+      if (u) {
+        document.getElementById('nomeUsuarioBarra').textContent = u.nome.split(' ')[0];
+      }
+
+      // Obtém o ID da turma pela URL (Ex: /professor/turma_detalhes.html?id=1)
+      const urlParams = new URLSearchParams(window.location.search);
+      const turmaId = urlParams.get('id');
+
+      const tituloTurma = document.getElementById('tituloTurma');
+      const subtituloTurma = document.getElementById('subtituloTurma');
+      const btnAcessarGrupos = document.getElementById('btnAcessarGrupos');
+      const listaAlunos = document.getElementById('listaAlunos');
+      const qtdAlunos = document.getElementById('qtdAlunos');
+      const listaAtividades = document.getElementById('listaAtividades');
+
+      // Botão Redirecionar Grupos
+      btnAcessarGrupos.addEventListener('click', () => {
+        if(turmaId) window.location.href = `grupos.html?turmaId=${turmaId}`;
+      });
+
+      // Função principal de carregamento da tela
+      async function carregarDadosDaTurma() {
+        if (!turmaId) {
+          tituloTurma.textContent = "Turma não encontrada";
+          subtituloTurma.textContent = "ID inválido na URL.";
+          listaAlunos.innerHTML = "";
+          listaAtividades.innerHTML = "";
+          return;
+        }
+
+        try {
+          // 1. Carregar Turma
+          const resTurma = await fetch(`/turmas/${turmaId}`);
+          if (!resTurma.ok) throw new Error('Turma não encontrada.');
+          const turma = await resTurma.json();
+          
+          tituloTurma.textContent = turma.nome;
+          subtituloTurma.innerHTML = `<i class="bi bi-book me-1"></i> ID: ${turma.id}`;
+          
+          // Preenche modal de config
+          document.getElementById('inputNomeTurma').value = turma.nome;
+          document.getElementById('inputMateriaTurma').value = turma.materia || '';
+
+          // 2. Carregar Alunos da turma
+          const resUsuarios = await fetch('/usuarios');
+          const usuariosCadastrados = await resUsuarios.json();
+          
+          // Filtra quem é aluno e tem a turma no array turmasIds
+          const alunosDaTurma = usuariosCadastrados.filter(user => user.funcao === 'aluno' && (user.turmasIds || []).includes(Number(turmaId)));
+          
+          qtdAlunos.textContent = alunosDaTurma.length;
+          listaAlunos.innerHTML = '';
+
+          if (alunosDaTurma.length === 0) {
+            listaAlunos.innerHTML = `<div class="p-3 text-center texto-suave">Nenhum aluno nesta turma.</div>`;
+          } else {
+            alunosDaTurma.forEach(aluno => {
+              listaAlunos.innerHTML += `
+                <div class="list-group-item d-flex justify-content-between align-items-center py-3">
+                  <div class="d-flex align-items-center">
+                    <div class="rounded-circle bg-secondary text-white d-flex align-items-center justify-content-center me-3" style="width: 40px; height: 40px; font-weight: bold;">
+                      ${aluno.nome[0].toUpperCase()}
+                    </div>
+                    <div>
+                      <h6 class="mb-0 fw-bold">${aluno.nome}</h6>
+                      <small class="texto-suave">${aluno.matricula || 'Sem matrícula'}</small>
+                    </div>
+                  </div>
+                  <button class="btn btn-sm btn-outline-danger" onclick="removerAluno(${aluno.id})" title="Remover da turma">
+                    <i class="bi bi-trash"></i>
+                  </button>
+                </div>
+              `;
+            });
+          }
+
+          // Preencher select de adicionar aluno (alunos que NÃO estão na turma)
+          const selectNovo = document.getElementById('selectAlunoNovo');
+          selectNovo.innerHTML = '<option value="">Escolha um aluno...</option>';
+          const alunosForaDaTurma = usuariosCadastrados.filter(user => user.funcao === 'aluno' && !(user.turmasIds || []).includes(Number(turmaId)));
+          alunosForaDaTurma.forEach(a => {
+            selectNovo.innerHTML += `<option value="${a.id}">${a.nome} (${a.matricula || a.usuario})</option>`;
+          });
+
+          // 3. Carregar Atividades/Quests da Turma
+          const resQuests = await fetch(`/quests?turmaId=${turmaId}`);
+          const quests = await resQuests.json();
+          listaAtividades.innerHTML = '';
+
+          if(quests.length === 0) {
+            listaAtividades.innerHTML = `<div class="p-3 text-center texto-suave">Nenhuma atividade atribuída.</div>`;
+          } else {
+            const dataAtual = new Date();
+
+            quests.forEach(quest => {
+              const dataPrazo = new Date(quest.dataPrazo);
+              const expirada = dataPrazo < dataAtual;
+              
+              const badgeStatus = expirada 
+                ? `<span class="badge bg-danger status-badge">Encerrada</span>` 
+                : `<span class="badge bg-success status-badge">Ativa</span>`;
+
+              listaAtividades.innerHTML += `
+                <div class="list-group-item py-3">
+                  <div class="d-flex justify-content-between align-items-start mb-1">
+                    <h6 class="mb-0 fw-bold">${quest.nome}</h6>
+                    ${badgeStatus}
+                  </div>
+                  <p class="mb-1 texto-suave" style="font-size: 0.85rem;">${quest.descricao}</p>
+                  <small class="texto-suave"><i class="bi bi-calendar-event me-1"></i> Prazo: ${dataPrazo.toLocaleDateString('pt-BR')} às ${dataPrazo.toLocaleTimeString('pt-BR', {hour: '2-digit', minute:'2-digit'})}</small>
+                </div>
+              `;
+            });
+          }
+
+        } catch (error) {
+          console.error(error);
+          tituloTurma.textContent = "Erro ao carregar";
+          listaAlunos.innerHTML = `<div class="text-danger p-3">Não foi possível carregar os dados. Verifique o servidor.</div>`;
+        }
+      }
+
+      // -------------------------------------------------------------
+      // EVENTOS DE BOTÕES E FORMULÁRIOS
+      // -------------------------------------------------------------
+
+      // Remover aluno da turma
+      window.removerAluno = async function(idAluno) {
+        if(!confirm("Tem certeza que deseja remover este aluno da turma?")) return;
+        
+        try {
+          const res = await fetch(`/usuarios/${idAluno}`);
+          const aluno = await res.json();
+          
+          const novasTurmas = (aluno.turmasIds || []).filter(id => id !== Number(turmaId));
+          
+          await fetch(`/usuarios/${idAluno}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ turmasIds: novasTurmas })
+          });
+          
+          carregarDadosDaTurma();
+        } catch (e) {
+          alert('Não foi possível remover o aluno.');
+        }
+      }
+
+      // Submit Form Configurações (Editar Turma)
+      document.getElementById('formConfigTurma').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        const novoNome = document.getElementById('inputNomeTurma').value.trim();
+        const novaMateria = document.getElementById('inputMateriaTurma').value.trim();
+
+        try {
+          await fetch(`/turmas/${turmaId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome: novoNome, materia: novaMateria })
+          });
+          
+          bootstrap.Modal.getInstance(document.getElementById('modalConfigTurma')).hide();
+          tituloTurma.textContent = novoNome;
+        } catch (e) {
+          alert('Não foi possível salvar as configurações da turma.');
+        }
+      });
+
+      // Excluir turma
+      document.getElementById('btnExcluirTurma').addEventListener('click', async () => {
+        if(!confirm("ATENÇÃO: Deseja realmente excluir esta turma permanentemente?")) return;
+        
+        try {
+          await fetch(`/turmas/${turmaId}`, { method: 'DELETE' });
+          window.location.href = 'turmas.html';
+        } catch (e) {
+          alert('Não foi possível excluir a turma.');
+        }
+      });
+
+      // Submit Form Adicionar Aluno
+      document.getElementById('formAdicionarAluno').addEventListener('submit', async (e) => {
+        e.preventDefault();
+        const alunoId = document.getElementById('selectAlunoNovo').value;
+        if(!alunoId) return;
+
+        try {
+          const res = await fetch(`/usuarios/${alunoId}`);
+          const aluno = await res.json();
+          
+          const novasTurmas = aluno.turmasIds ? [...aluno.turmasIds] : [];
+          if (!novasTurmas.includes(Number(turmaId))) {
+            novasTurmas.push(Number(turmaId));
+          }
+          
+          await fetch(`/usuarios/${alunoId}`, {
+            method: 'PATCH',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ turmasIds: novasTurmas })
+          });
+
+          bootstrap.Modal.getInstance(document.getElementById('modalAdicionarAluno')).hide();
+          carregarDadosDaTurma(); // Recarrega a lista
+        } catch (e) {
+          alert('Não foi possível adicionar o aluno à turma.');
+        }
+      });
+
+      // Iniciar a página
+      carregarDadosDaTurma();
+    </script>   
+      </body>
+</html>

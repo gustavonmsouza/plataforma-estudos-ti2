@@ -45,3 +45,8 @@ A arquitetura dos componentes de back-end, banco de dados, APIs e demais integra
 * **Frameworks/Bibliotecas:** A definir
 * **Banco de dados:** A definir
 * **Ferramentas:** Git, GitHub, Figma, VS Code, Miro
+## Executar a plataforma Quorbe
+
+Na pasta principal do projeto (a mesma que contém este `package.json`), instale as dependências uma vez com `npm install` e inicie tudo com `npm start`. O servidor integrado atende às páginas da plataforma, ao login, aos recursos REST do banco JSON e à loja de cosméticos na mesma porta (`3000`).
+
+Depois, acesse `http://localhost:3000`. A loja pode ser aberta em `http://localhost:3000/loja.html`. Não é necessário iniciar um segundo servidor na pasta `codigo`.
