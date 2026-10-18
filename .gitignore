@@ -9,3 +9,4 @@ package-lock.json
 CLAUDE.md
 .docs_disciplina
 .claude
+node_modules/

@@ -1,0 +1,43 @@
+{
+  "usuarios": [
+    {
+      "id": 1,
+      "usuario": "lucas.silva",
+      "nome": "Lucas Silva",
+      "email": "lucas@email.com",
+      "funcao": "aluno",
+      "orbes": 580
+    },
+    {
+      "id": 5,
+      "login": "User",
+      "senha": "1234",
+      "nome": "User Nome",
+      "email": "user@email.com",
+      "funcao": "administrador",
+      "orbes": 0
+    }
+  ],
+  "cosmeticos": [
+    {
+      "id": 1,
+      "nome": "Boné Escolar",
+      "precoOrbes": 150,
+      "icone": "./assets/img/cosmeticos/bone.png"
+    },
+    {
+      "id": 2,
+      "nome": "Mochila Dourada",
+      "precoOrbes": 300,
+      "icone": "./assets/img/cosmeticos/mochila.png"
+    }
+  ],
+  "cosmeticosUsuarios": [
+    {
+      "id": 1,
+      "usuarioId": 1,
+      "cosmeticoId": 1,
+      "dataAdquirido": "2026-09-01T10:00:00Z"
+    }
+  ]
+}

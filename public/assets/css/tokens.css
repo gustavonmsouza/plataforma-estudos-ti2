@@ -1,0 +1,13 @@
+:root {
+  --q-primary: #6c4bd8;
+  --q-primary-dark: #4c32a7;
+  --q-primary-soft: #f0ecff;
+  --q-ink: #25233a;
+  --q-muted: #77758b;
+  --q-bg: #f7f7fc;
+  --q-border: #e9e7f2;
+  --q-card: #ffffff;
+  --q-success: #198754;
+  --q-radius: 20px;
+  --q-shadow: 0 10px 30px rgba(45, 33, 92, .07);
+}

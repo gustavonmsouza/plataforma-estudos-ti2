@@ -1,92 +1,41 @@
-# Código Fonte
+# Quorbe — Loja de Cosméticos (adaptada ao projeto)
 
-Essa é a pasta para a manter o programa que vocês vão construir no contexto dessa disciplina. 
+Esta versão foi ajustada para a estrutura existente em `codigo/`, preservando a página e a barra lateral da loja.
 
-Se necessário, descreva neste arquivo aspectos relevantes da estrutura de diretórios criada para organização do código.
+## Arquivos usados
+- `public/assets/js/servidor.js`: servidor Express e API da loja. O arquivo usa caminhos relativos à pasta do projeto, então continua encontrando `public/` e `db/db.json` após a mudança.
+- `db/db.json`: banco de dados utilizado pelo servidor.
+- `public/loja.html`: interface da loja.
+- `public/assets/js/loja.js`: pesquisa, filtro, seleção de usuário, CRUD e resgate.
+- `public/assets/css/tokens.css` e `public/assets/css/style.css`: estilos existentes.
+- `public/assets/images/cosmeticos/`: imagens locais referenciadas pelo banco.
 
-Uma sugestão da estrutura de diretórios para o projeto é a seguinte:
+Os arquivos antigos e duplicados foram preservados em `legacy/PaginaL/` e `legacy/db-public/`, fora da pasta pública do servidor. Eles são arquivos de referência e não são usados na execução principal.
 
-```plaintext
-codigo/  (essa pasta aqui)
-│
-├── db/
-│   └── db.json (estruturas de dados)
-│
-├── public/ (seu site - front end)
-│   ├── assets/
-│   │   ├── css/
-│   │   │   ├── styles.css
-│   │   │   └── (outros arquivos .css)
-│   │   │
-│   │   ├── js/
-│   │   │   ├── app.js
-│   │   │   └── (outros arquivos .js)
-│   │   │
-│   │   ├── images/
-│   │   │   ├── logo.png
-│   │   │   └── (outras imagens)
-│   │   │
-│   │   └── fonts/
-│   │       ├── font1.ttf
-│   │       └── (outras fontes)
-│   │
-│   ├── modulos/
-│   │   ├── modulo-1/
-│   │   │   └── (arquivos do módulo)
-│   │   │
-│   │   └── modulo-2/
-│   │       └── (arquivos do módulo)
-│   │
-│   ├── index.html (página inicial front end)
-│   ├── about.html
-│   ├── contact.html
-│   └── (outras páginas)
-│
-│── index.js (app back end)
-│── package.json (configuração back end)
-└── README.md (este arquivo aqui)
-```
+## Como executar no Windows
+1. Extraia o ZIP.
+2. Abra o terminal na pasta `codigo` (a pasta que contém `package.json`). O servidor está organizado em `codigo/public/assets/js/servidor.js`.
+3. Execute `npm install` (necessário apenas na primeira vez).
+4. Execute `npm start`.
+5. Abra `http://localhost:3000/loja.html`.
 
-## Parte Front End
+Não abra `loja.html` com duplo clique nem use o Live Server: a página precisa ser servida pelo Express para que as chamadas `/api/...` funcionem.
 
-Para montar seu site, edite os arquivos existentes e crie novos arquivos na pasta `public` que mantem todos os arquivos da parte de Front End do site, a interface que é vista pelo usuário no navegador.
+## Funcionalidades
+- Exibe os cosméticos cadastrados no `db/db.json`.
+- Pesquisa e filtro de itens disponíveis/resgatados.
+- Alunos podem resgatar itens; o servidor confere o saldo, desconta os Orbes e registra a posse.
+- Professores e administradores têm as mesmas funções na loja: adicionar, editar e excluir cosméticos.
+- O CRUD utiliza o `id` de cada cosmético, não a posição dele no array.
+- As imagens de `Mochila` e `Boné escolar` foram colocadas em `public/assets/images/cosmeticos/` e os caminhos foram corrigidos no JSON.
 
-Nesta pasta public, sugerimos que você organize os arquivos do seu site da seguinte maneira:
+## Login e troca de usuário
+A loja tenta primeiro identificar o usuário autenticado em `sessionStorage.usuarioCorrente`, se existir um usuário correspondente no banco. Se não houver sessão compatível, usa o usuário de demonstração escolhido e salvo no `localStorage`. No menu de usuário, clique em **Trocar usuário de teste** para testar os perfis cadastrados no JSON.
 
-* Pasta `assets`: os arquivos de formatação (CSS), os scripts (JS), as imagens utilizadas no site (JPG, PNG, GIF, SVG, etc), fontes (TTF) e outros arquivos gerais utilizados por todo o site.
-* Pasta `modulos`: os arquivos utilizados na implementação das funcionalidades do site. Separe uma sub-pasta para cada novo módulo ou funcionalidade. Pode também ser utilizado para dividir o trabalho de cada membro do grupo.
-* Arquivo `index.html`: arquivo que representa a "home page" do site.
+Para testar o gerenciamento, selecione `Fernanda Alves Martins`, cuja função no banco é `professor`. A interface e o servidor autorizam `professor`, `administrador` e `admin` a gerenciar cosméticos.
 
-## Parte Back End
+## Observação de segurança
+A seleção via `localStorage` e o cabeçalho `x-usuario-id` são mecanismos de demonstração para trabalho acadêmico, não autenticação de produção: alguém pode alterar esses valores no navegador. Em produção, o servidor deve obter o usuário de uma sessão/token validado, sem confiar no ID enviado pelo cliente.
 
-Para esse projeto vamos utilizar o ambiente de execução **[Node.js](https://nodejs.org/)** para montar um Back End bem simplificado, porém poderoso que utiliza o módulo **[JSON Server](https://github.com/typicode/json-server#readme)**. Não se preocupe, você não precisa conhecer como programar para o ambiente Node.js e nem alterar estes arquivos para colocar o seu site funcionando.
 
-Na estrutura de arquivos que vocês estão recebendo, você vai encontrar, ainda, outra pasta e alguns arquivos. São eles:
-
-* Pasta `db`: local onde é armazenado o arquivo com as estruturas de dados utilizadas pela aplicação. O conteúdo é composto apenas pelo arquivo `db.json`.
-* Arquivo `index.js`: arquivo que inicializa o servidor web e a aplicação de back end no ambiente do Node.js, fornecendo uma API RESTful a partir do arquivo `db.json`. Evite alterar esse arquivo
-* Arquivo `package.js`: arquivo com as configurações da aplicação de back end.
-
-## Setup e execução do ambiente
-
-Para executar a apilcação de back end e permitir o acesso ao seu site, você deverá instalar o Node.js no seu computador. Para isso siga as instruções no site do [**Node.js**](https://nodejs.org/), fazendo o download da versão LTS (versão mais estável do ambiente).
-
-Assim que o Node.js estiver instalado no seu computador, você deve abrir o terminal na pasta do seu projeto e executar os seguintes comandos:
-
-```
-$> npm install
-```
-
-Isso fará com que o NPM instale todos os pacotes necessários para executar o Back End. O NPM é o aplicativo que gerencia dependências de um projeto e instala os pacotes do Node.JS.
-
-Em seguida, com os pacotes já instalados, basta executar o seguinte comando:
-
-```
-$> npm start
-```
-
-Isso fará com que o Node.js execute sua aplicação de Back End, subindo o servidor Web e a API RESTful que é provida pelo JSON Server a partir do arquivo `db.json`.
-
-## Dúvidas e Suporte
-
-Se tiver dúvidas, procure a monitoria para que te ajudem a entender todo o ambiente e te ajudem na implementação do seu projeto.
+Observação: embora o servidor esteja dentro de `public/assets/js` conforme a organização solicitada, a rota HTTP que corresponderia ao arquivo do servidor retorna 404 para não expor seu código-fonte. O servidor calcula os caminhos do banco e da pasta pública a partir do local do arquivo.
