@@ -1,6 +1,0 @@
-.profile-main { max-width: 1600px; }
-.profile-simple-header { margin-bottom: 28px; }
-.profile-simple { min-height: 220px; display: flex; align-items: center; justify-content: center; gap: 24px; padding: clamp(24px, 5vw, 56px); border: 1px solid var(--q-border) !important; border-radius: 22px; background: #fff; box-shadow: var(--q-shadow); text-align: center; }
-.profile-simple h2 { margin: 0; color: var(--q-ink); font-size: clamp(1.7rem, 4vw, 2.6rem); font-weight: 800; overflow-wrap: anywhere; }
-.btn-store { display: inline-flex; align-items: center; justify-content: center; gap: 9px; border-radius: 12px; padding: .85rem 1.1rem; font-weight: 750; text-decoration: none; white-space: nowrap; }
-@media (max-width: 600px) { .profile-simple { flex-direction: column; min-height: 190px; } .btn-store { white-space: normal; width: 100%; max-width: 260px; } }

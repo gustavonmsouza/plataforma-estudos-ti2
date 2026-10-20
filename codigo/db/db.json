@@ -216,15 +216,31 @@
       "id": 1,
       "nome": "Primeiro passo",
       "descricao": "Complete sua primeira quest",
-      "icone": "primeiro-passo.png",
-      "cosmeticoId": 1
+      "icone": "⭐",
+      "cosmeticoId": null,
+      "tipoRequisito": "tarefas",
+      "valorRequisito": 1,
+      "percentualRequisito": 90
     },
     {
       "id": 2,
       "nome": "Semana de foco",
       "descricao": "Estude por 7 dias consecutivos",
-      "icone": "semana-foco.png",
-      "cosmeticoId": 2
+      "icone": "🏆",
+      "cosmeticoId": 2,
+      "tipoRequisito": "sequencia",
+      "valorRequisito": 7,
+      "percentualRequisito": 90
+    },
+    {
+      "nome": "Conquista de teste",
+      "descricao": "Descrição da conquista de teste",
+      "icone": "✅",
+      "cosmeticoId": 2,
+      "tipoRequisito": "sequencia",
+      "valorRequisito": 5,
+      "percentualRequisito": 90,
+      "id": 3
     }
   ],
   "conquistasUsuarios": [
@@ -244,6 +260,18 @@
       "id": 3,
       "usuarioId": 3,
       "conquistaId": 1,
+      "completou": true
+    },
+    {
+      "id": 4,
+      "usuarioId": 3,
+      "conquistaId": 2,
+      "completou": true
+    },
+    {
+      "id": 5,
+      "usuarioId": 3,
+      "conquistaId": 3,
       "completou": true
     }
   ]

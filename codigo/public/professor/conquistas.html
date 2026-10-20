@@ -1,249 +1,616 @@
 <!doctype html>
-<html lang="pt-br" data-tema="grafite">
+<html lang="pt-br" data-tema="escuro">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Quorbe | Gerenciar Conquistas</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  >
-  <link rel="stylesheet" href="/assets/css/tokens.css">
-  <link rel="stylesheet" href="/assets/css/style.css">
+    <title>Quorbe | Gerenciar Conquistas</title>
 
-  <script src="/assets/js/auth.js"></script>
-  <script>
-    exigirFuncao('professor');
+    <link
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+        rel="stylesheet"
+    >
 
-    document.documentElement.setAttribute('data-tema', 'grafite');
-  </script>
+    <link rel="stylesheet" href="/assets/css/tokens.css">
+    <link rel="stylesheet" href="/assets/css/style.css">
+    <link rel="stylesheet" href="/assets/css/conquistas.css">
 
-  <style>
-    .pagina-conquistas {
-      min-height: 100vh;
-      background-color: var(--cor-fundo);
-      color: var(--cor-texto);
-    }
+    <script src="/assets/js/auth.js"></script>
 
-    .card-conquista {
-      background-color: var(--cor-superficie);
-      border: 1px solid var(--cor-borda);
-      border-radius: 12px;
-      color: var(--cor-texto);
-      height: 100%;
-    }
-
-    .icone-conquista {
-      width: 64px;
-      height: 64px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin: 0 auto 16px;
-      border-radius: 50%;
-      background-color: var(--cor-fundo);
-      font-size: 30px;
-    }
-
-    .campo-formulario {
-      background-color: var(--cor-superficie);
-      color: var(--cor-texto);
-      border-color: var(--cor-borda);
-    }
-
-    .campo-formulario:focus {
-      background-color: var(--cor-superficie);
-      color: var(--cor-texto);
-    }
-
-    .texto-secundario {
-      color: var(--cor-texto);
-      opacity: 0.75;
-    }
-
-    .botao-principal {
-      background-color: var(--cor-secundaria);
-      color: var(--cor-sobre-secundaria);
-      border: none;
-    }
-
-    .botao-principal:hover {
-      opacity: 0.85;
-      color: var(--cor-sobre-secundaria);
-    }
-  </style>
+    <script>
+        exigirFuncao('professor');
+    </script>
 </head>
 
 <body>
-  <main class="pagina-conquistas p-4">
-    <div class="container">
 
-      <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-4">
-        <div>
-          <a
-            href="home.html"
-            class="text-decoration-none texto-secundario"
-          >
-            ← Voltar para a página inicial
-          </a>
+    <!-- Ícones SVG utilizados pela barra lateral da Home -->
+    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
 
-          <h1 class="fw-bold mt-3">🏆 Gerenciar Conquistas</h1>
+        <symbol id="bootstrap" viewBox="0 0 118 94">
+            <path
+                fill-rule="evenodd"
+                clip-rule="evenodd"
+                d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z"
+            ></path>
+        </symbol>
 
-          <p class="texto-secundario">
-            Cadastre e gerencie as conquistas disponíveis para os alunos.
-          </p>
-        </div>
-      </div>
+        <symbol id="home" viewBox="0 0 16 16">
+            <path d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z"></path>
+        </symbol>
 
-      <section class="card-conquista p-4 mb-4">
-        <h2 class="h5 fw-bold mb-3" id="tituloFormulario">
-          Cadastrar conquista
-        </h2>
+        <symbol id="speedometer2" viewBox="0 0 16 16">
+            <path d="M8 4a.5.5 0 0 1 .5.5V6a.5.5 0 0 1-1 0V4.5A.5.5 0 0 1 8 4zM3.732 5.732a.5.5 0 0 1 .707 0l.915.914a.5.5 0 1 1-.708.708l-.914-.915a.5.5 0 0 1 0-.707zM2 10a.5.5 0 0 1 .5-.5h1.586a.5.5 0 0 1 0 1H2.5A.5.5 0 0 1 2 10zm9.5 0a.5.5 0 0 1 .5-.5h1.5a.5.5 0 0 1 0 1H12a.5.5 0 0 1-.5-.5zm.754-4.246a.389.389 0 0 0-.527-.02L7.547 9.31a.91.91 0 1 0 1.302 1.258l3.434-4.297a.389.389 0 0 0-.029-.518z"></path>
+            <path fill-rule="evenodd" d="M0 10a8 8 0 1 1 15.547 2.661c-.442 1.253-1.845 1.602-2.932 1.25C11.309 13.488 9.475 13 8 13c-1.474 0-3.31.488-4.615.911-1.087.352-2.49.003-2.932-1.25A7.988 7.988 0 0 1 0 10zm8-7a7 7 0 0 0-6.603 9.329c.203.575.923.876 1.68.63C4.397 12.533 6.358 12 8 12s3.604.532 4.923.96c.757.245 1.477-.056 1.68-.631A7 7 0 0 0 8 3z"></path>
+        </symbol>
 
-        <form id="formConquista">
-          <input type="hidden" id="conquistaId">
+        <symbol id="table" viewBox="0 0 16 16">
+            <path d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm15 2h-4v3h4V4zm0 4h-4v3h4V8zm0 4h-4v3h4V8h-4v3h3a1 1 0 0 0 1-1v-2zm-5 3v-3H6v3h4zm-5 0v-3H1v2a1 1 0 0 0 1 1h3zm-4-4h4V8H1v3zm0-4h4V4H1v3zm5-3v3h4V4H6zm4 4H6v3h4V8z"></path>
+        </symbol>
 
-          <div class="row g-3">
-            <div class="col-md-6">
-              <label for="nome" class="form-label">
-                Nome da conquista
-              </label>
+        <symbol id="grid" viewBox="0 0 16 16">
+            <path d="M1 2.5A1.5 1.5 0 0 1 2.5 1h3A1.5 1.5 0 0 1 7 2.5v3A1.5 1.5 0 0 1 5.5 7h-3A1.5 1.5 0 0 1 1 5.5v-3zM2.5 2a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 1h3A1.5 1.5 0 0 1 15 2.5v3A1.5 1.5 0 0 1 13.5 7h-3A1.5 1.5 0 0 1 9 5.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zM1 10.5A1.5 1.5 0 0 1 2.5 9h3A1.5 1.5 0 0 1 7 10.5v3A1.5 1.5 0 0 1 5.5 15h-3A1.5 1.5 0 0 1 1 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3zm6.5.5A1.5 1.5 0 0 1 10.5 9h3a1.5 1.5 0 0 1 1.5 1.5v3a1.5 1.5 0 0 1-1.5 1.5h-3A1.5 1.5 0 0 1 9 13.5v-3zm1.5-.5a.5.5 0 0 0-.5.5v3a.5.5 0 0 0 .5.5h3a.5.5 0 0 0 .5-.5v-3a.5.5 0 0 0-.5-.5h-3z"></path>
+        </symbol>
 
-              <input
-                type="text"
-                id="nome"
-                class="form-control campo-formulario"
-                maxlength="80"
-                required
-              >
-            </div>
+        <symbol id="people-circle" viewBox="0 0 16 16">
+            <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z"></path>
+            <path fill-rule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"></path>
+        </symbol>
 
-            <div class="col-md-6">
-              <label for="icone" class="form-label">
-                Ícone ou emoji
-              </label>
+        <symbol id="trophy" viewBox="0 0 16 16">
+            <path d="M2.5.5A.5.5 0 0 1 3 0h10a.5.5 0 0 1 .5.5c0 .538-.012 1.05-.034 1.536a3 3 0 1 1-1.133 5.89c-.79 1.865-1.878 2.777-2.833 3.011v2.173l1.425.356c.194.048.377.135.537.255L13.3 15.1a.5.5 0 0 1-.3.9H3a.5.5 0 0 1-.3-.9l1.838-1.379c.16-.12.343-.207.537-.255L6.5 13.11v-2.173c-.955-.234-2.043-1.146-2.833-3.012a3 3 0 1 1-1.132-5.89z"></path>
+        </symbol>
 
-              <input
-                type="text"
-                id="icone"
-                class="form-control campo-formulario"
-                placeholder="Ex.: 🏆"
-                maxlength="100"
-                required
-              >
-            </div>
+    </svg>
 
-            <div class="col-md-8">
-              <label for="descricao" class="form-label">
-                Descrição
-              </label>
+    <main class="d-flex flex-nowrap conquistas-layout" style="min-height: 100vh;">
 
-              <textarea
-                id="descricao"
-                class="form-control campo-formulario"
-                rows="2"
-                maxlength="250"
-                required
-              ></textarea>
-            </div>
-
-            <div class="col-md-4">
-              <label for="cosmeticoId" class="form-label">
-                ID do cosmético associado
-              </label>
-
-              <select
-                id="cosmeticoId"
-                class="form-select campo-formulario"
-              >
-                <option value="">Nenhum cosmético</option>
-              </select>
-            </div>
-          </div>
-
-          <div class="d-flex gap-2 mt-4 flex-wrap">
-            <button
-              type="submit"
-              class="btn botao-principal"
-              id="botaoSalvar"
-            >
-              Cadastrar conquista
-            </button>
-
-            <button
-              type="button"
-              class="btn btn-outline-secondary"
-              id="botaoCancelar"
-              hidden
-            >
-              Cancelar edição
-            </button>
-          </div>
-
-          <div
-            id="mensagemFormulario"
-            class="mt-3"
-            role="status"
-            aria-live="polite"
-          ></div>
-        </form>
-      </section>
-
-      <section>
-        <div class="d-flex justify-content-between align-items-center flex-wrap gap-3 mb-3">
-          <h2 class="h4 fw-bold mb-0">
-            Conquistas cadastradas
-          </h2>
-
-          <span id="totalConquistas" class="texto-secundario">
-            Carregando...
-          </span>
-        </div>
-
-        <div class="row g-3 mb-4">
-          <div class="col-md-8">
-            <label for="pesquisa" class="form-label">
-              Pesquisar conquistas
-            </label>
-
-            <input
-              type="search"
-              id="pesquisa"
-              class="form-control campo-formulario"
-              placeholder="Digite o nome ou a descrição..."
-            >
-          </div>
-
-          <div class="col-md-4">
-            <label for="filtroCosmetico" class="form-label">
-              Filtrar por cosmético
-            </label>
-
-            <select
-              id="filtroCosmetico"
-              class="form-select campo-formulario"
-            >
-              <option value="todos">Todos</option>
-              <option value="com">Com cosmético associado</option>
-              <option value="sem">Sem cosmético associado</option>
-            </select>
-          </div>
-        </div>
+        <!-- SIDEBAR: MESMA ESTRUTURA DA HOME -->
 
         <div
-          id="mensagemLista"
-          class="texto-secundario mb-3"
-          role="status"
-          aria-live="polite"
-        ></div>
+            class="d-flex flex-column flex-shrink-0 p-3 sidebar"
+            style="width: 280px; background-color: var(--cor-superficie); color: var(--cor-texto);"
+        >
 
-        <div id="listaConquistas" class="row g-3"></div>
-      </section>
+            <a
+                href="/"
+                class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none"
+            >
+                <svg class="bi pe-none me-2" width="40" height="32" aria-hidden="true">
+                    <use href="#bootstrap"></use>
+                </svg>
 
-    </div>
-  </main>
+                <span class="fs-4" style="color: var(--cor-texto);">
+                    Quorbe
+                </span>
+            </a>
 
-  <script src="/assets/js/conquistas.js"></script>
+            <hr style="border-color: var(--cor-borda);">
+
+            <ul class="nav nav-pills flex-column mb-auto">
+
+                <li class="nav-item">
+                    <a
+                        href="home.html"
+                        class="nav-link link-body-emphasis"
+                        style="color: var(--cor-texto) !important;"
+                    >
+                        <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor">
+                            <use href="#home"></use>
+                        </svg>
+                        Página Inicial
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="tarefas.html"
+                        class="nav-link link-body-emphasis"
+                        style="color: var(--cor-texto) !important;"
+                    >
+                        <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor">
+                            <use href="#speedometer2"></use>
+                        </svg>
+                        Tarefas
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="turmas.html"
+                        class="nav-link link-body-emphasis"
+                        style="color: var(--cor-texto) !important;"
+                    >
+                        <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor">
+                            <use href="#table"></use>
+                        </svg>
+                        Turmas
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="conquistas.html"
+                        class="nav-link active"
+                        aria-current="page"
+                        style="background-color: var(--cor-secundaria); color: var(--cor-sobre-secundaria);"
+                    >
+                        <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor">
+                            <use href="#trophy"></use>
+                        </svg>
+                        Gerenciar Conquistas
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="calendario.html"
+                        class="nav-link link-body-emphasis"
+                        style="color: var(--cor-texto) !important;"
+                    >
+                        <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor">
+                            <use href="#grid"></use>
+                        </svg>
+                        Calendário
+                    </a>
+                </li>
+
+                <li>
+                    <a
+                        href="perfil.html"
+                        class="nav-link link-body-emphasis"
+                        style="color: var(--cor-texto) !important;"
+                    >
+                        <svg class="bi pe-none me-2" width="16" height="16" fill="currentColor">
+                            <use href="#people-circle"></use>
+                        </svg>
+                        Perfil
+                    </a>
+                </li>
+
+            </ul>
+
+            <hr style="border-color: var(--cor-borda);">
+
+            <div class="dropdown">
+
+                <a
+                    href="#"
+                    class="d-flex align-items-center link-body-emphasis text-decoration-none dropdown-toggle"
+                    data-bs-toggle="dropdown"
+                    style="color: var(--cor-texto) !important;"
+                >
+                    <img
+                        src="https://github.com/mdo.png"
+                        alt=""
+                        width="32"
+                        height="32"
+                        class="rounded-circle me-2"
+                        id="imgUsuarioBarra"
+                    >
+
+                    <strong id="nomeUsuarioBarra">Professor</strong>
+                </a>
+
+                <ul
+                    class="dropdown-menu text-small shadow"
+                    style="background-color: var(--cor-superficie);"
+                >
+                    <li>
+                        <a
+                            class="dropdown-item"
+                            href="perfil.html"
+                            style="color: var(--cor-texto);"
+                        >
+                            Perfil
+                        </a>
+                    </li>
+
+                    <li>
+                        <hr
+                            class="dropdown-divider"
+                            style="border-color: var(--cor-borda);"
+                        >
+                    </li>
+
+                    <li>
+                        <a
+                            class="dropdown-item"
+                            href="#"
+                            onclick="sair()"
+                            style="color: var(--cor-texto);"
+                        >
+                            Sair
+                        </a>
+                    </li>
+                </ul>
+
+            </div>
+
+        </div>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+
+        <div class="flex-grow-1 p-4 overflow-auto conquistas-conteudo">
+
+            <header class="d-flex flex-wrap justify-content-between align-items-start gap-3 mb-4">
+
+                <div>
+                    <h4 class="mb-2 fw-bold">
+                        Gerenciar conquistas
+                    </h4>
+
+                    <p class="text-muted mb-0">
+                        Crie conquistas, defina os requisitos e escolha
+                        os ícones que os alunos verão na plataforma.
+                    </p>
+                </div>
+
+                <span class="badge-area">
+                    <i class="bi bi-shield-check me-1"></i>
+                    Área do professor
+                </span>
+
+            </header>
+
+            <div
+                id="mensagemFormulario"
+                class="mensagem"
+                role="status"
+                aria-live="polite"
+            ></div>
+
+            <div class="grid-principal">
+
+                <!-- FORMULÁRIO -->
+
+                <section class="dashboard-card painel">
+
+                    <div class="painel-cabecalho">
+                        <h5 class="fw-bold mb-2">Nova conquista</h5>
+
+                        <p class="text-muted mb-0">
+                            Personalize a conquista e configure as condições
+                            necessárias para desbloqueá-la.
+                        </p>
+                    </div>
+
+                    <form id="formConquista">
+
+                        <input type="hidden" id="conquistaId">
+
+                        <div class="campo">
+                            <label for="nome" class="form-label">
+                                Nome da conquista
+                            </label>
+
+                            <input
+                                type="text"
+                                class="form-control"
+                                id="nome"
+                                name="nome"
+                                placeholder="Ex.: Primeiro passo"
+                                maxlength="80"
+                                required
+                            >
+                        </div>
+
+                        <div class="campo campo-icone">
+
+                            <label class="form-label rotulo">
+                                Ícone da conquista
+                            </label>
+
+                            <input
+                                type="hidden"
+                                id="icone"
+                                name="icone"
+                                value="🏆"
+                            >
+
+                            <div class="icone-selecionado">
+
+                                <div
+                                    class="preview-icone"
+                                    id="previewIcone"
+                                    aria-label="Pré-visualização do ícone"
+                                >🏆</div>
+
+                                <div class="info-icone">
+                                    <strong id="nomeIconeSelecionado">
+                                        Troféu
+                                    </strong>
+
+                                    <small>
+                                        Ícone selecionado para a conquista
+                                    </small>
+                                </div>
+
+                            </div>
+
+                            <div class="categorias-icones">
+
+                                <button
+                                    type="button"
+                                    class="categoria-icone ativo"
+                                    data-categoria-icone="emojis"
+                                    aria-pressed="true"
+                                >
+                                    <i class="bi bi-emoji-smile"></i>
+                                    Emojis
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="categoria-icone"
+                                    data-categoria-icone="vetoriais"
+                                    aria-pressed="false"
+                                >
+                                    <i class="bi bi-stars"></i>
+                                    Ícones profissionais
+                                </button>
+
+                            </div>
+
+                            <div
+                                id="galeriaEmojis"
+                                class="galeria-icones"
+                            ></div>
+
+                            <div
+                                id="galeriaVetorial"
+                                class="galeria-icones"
+                                hidden
+                            ></div>
+
+                            <p class="ajuda-icone text-muted mb-0">
+                                Clique em um ícone para selecioná-lo.
+                                Você pode escolher emojis ou ícones vetoriais.
+                            </p>
+
+                        </div>
+
+                        <div class="campo">
+                            <label for="descricao" class="form-label">
+                                Descrição
+                            </label>
+
+                            <textarea
+                                id="descricao"
+                                name="descricao"
+                                class="form-control"
+                                placeholder="Explique como essa conquista funciona."
+                                maxlength="500"
+                                required
+                            ></textarea>
+                        </div>
+
+                        <div class="campo">
+                            <label for="cosmetico" class="form-label">
+                                Cosmético associado
+                            </label>
+
+                            <select
+                                id="cosmetico"
+                                name="cosmetico"
+                                class="form-select"
+                            >
+                                <option value="">Nenhum cosmético</option>
+                            </select>
+
+                            <small class="text-muted">
+                                Opcional: associe um cosmético à conquista.
+                            </small>
+                        </div>
+
+                        <section class="requisitos">
+
+                            <h6 class="fw-bold">
+                                <i class="bi bi-bullseye me-2"></i>
+                                Requisitos para desbloqueio
+                            </h6>
+
+                            <p class="text-muted small">
+                                Defina o que o aluno precisa alcançar
+                                para desbloquear esta conquista.
+                            </p>
+
+                            <div class="campo">
+                                <label for="tipoRequisito" class="form-label">
+                                    Tipo de requisito
+                                </label>
+
+                                <select
+                                    id="tipoRequisito"
+                                    name="tipoRequisito"
+                                    class="form-select"
+                                >
+                                    <option value="tarefas">Tarefas concluídas</option>
+                                    <option value="orbes">Orbes acumulados</option>
+                                    <option value="sequencia">Sequência de estudos</option>
+                                    <option value="desempenho">Desempenho nas atividades</option>
+                                    <option value="todos">Todos os requisitos</option>
+                                </select>
+                            </div>
+
+                            <div class="linha-campos">
+
+                                <div class="campo" id="grupoValorRequisito">
+                                    <label
+                                        id="rotuloValorRequisito"
+                                        for="valorRequisito"
+                                        class="form-label"
+                                    >
+                                        Número de tarefas concluídas
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="valorRequisito"
+                                        name="valorRequisito"
+                                        min="1"
+                                        step="1"
+                                        value="1"
+                                        required
+                                    >
+
+                                    <small
+                                        id="ajudaValorRequisito"
+                                        class="text-muted"
+                                    >
+                                        Quantidade mínima necessária.
+                                    </small>
+                                </div>
+
+                                <div
+                                    class="campo"
+                                    id="grupoPercentualRequisito"
+                                    hidden
+                                >
+                                    <label
+                                        for="percentualRequisito"
+                                        class="form-label"
+                                    >
+                                        Aproveitamento mínimo (%)
+                                    </label>
+
+                                    <input
+                                        type="number"
+                                        class="form-control"
+                                        id="percentualRequisito"
+                                        name="percentualRequisito"
+                                        min="1"
+                                        max="100"
+                                        step="1"
+                                        value="90"
+                                    >
+                                </div>
+
+                            </div>
+
+                            <div
+                                id="resumoRequisito"
+                                class="resumo-requisito"
+                            >
+                                O aluno precisará cumprir o requisito definido.
+                            </div>
+
+                        </section>
+
+                        <div class="botoes-formulario">
+
+                            <button
+                                type="submit"
+                                class="btn btn-primary"
+                                id="botaoSalvar"
+                            >
+                                <i class="bi bi-plus-circle me-1"></i>
+                                Cadastrar conquista
+                            </button>
+
+                            <button
+                                type="button"
+                                class="btn btn-outline-secondary"
+                                id="botaoCancelar"
+                                hidden
+                            >
+                                Cancelar edição
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </section>
+
+                <!-- LISTAGEM -->
+
+                <section class="dashboard-card painel">
+
+                    <div class="cabecalho-listagem">
+
+                        <div>
+                            <h5 class="fw-bold mb-2">
+                                Conquistas cadastradas
+                            </h5>
+
+                            <p class="text-muted mb-0">
+                                Consulte e gerencie as conquistas da plataforma.
+                            </p>
+                        </div>
+
+                        <span
+                            class="contador"
+                            id="contadorConquistas"
+                        >
+                            0 conquistas
+                        </span>
+
+                    </div>
+
+                    <div class="filtros">
+
+                        <input
+                            type="search"
+                            class="form-control"
+                            id="pesquisa"
+                            placeholder="Pesquisar por nome ou descrição..."
+                            aria-label="Pesquisar conquistas"
+                        >
+
+                        <select
+                            id="filtroCosmetico"
+                            class="form-select"
+                            aria-label="Filtrar conquistas por cosmético"
+                        >
+                            <option value="todos">Todos os cosméticos</option>
+                            <option value="com">Com cosmético</option>
+                            <option value="sem">Sem cosmético</option>
+                        </select>
+
+                    </div>
+
+                    <div
+                        id="mensagemLista"
+                        class="mensagem"
+                        role="status"
+                        aria-live="polite"
+                    >
+                        Carregando conquistas...
+                    </div>
+
+                    <div
+                        id="listaConquistas"
+                        class="lista-conquistas"
+                    ></div>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        const usuario = usuarioLogado();
+
+        if (usuario) {
+            document.getElementById('nomeUsuarioBarra').textContent =
+                usuario.nome.split(' ')[0];
+
+            document.getElementById('tituloSaudacao')?.textContent;
+
+            if (usuario.foto) {
+                document.getElementById('imgUsuarioBarra').src = usuario.foto;
+            }
+        }
+    </script>
+
+    <script src="../assets/js/conquistas.js"></script>
+
 </body>
 </html>

@@ -1,0 +1,629 @@
+.conquistas-layout {
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.conquistas-conteudo {
+    min-width: 0;
+    min-height: 100vh;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.conquistas-conteudo h1,
+.conquistas-conteudo h2,
+.conquistas-conteudo h3,
+.conquistas-conteudo h4,
+.conquistas-conteudo h5,
+.conquistas-conteudo h6 {
+    color: var(--cor-texto);
+}
+
+.conquistas-conteudo .text-muted {
+    color: #94a3b8 !important;
+}
+
+.conquistas-layout > .sidebar {
+    box-sizing: border-box;
+    flex: 0 0 280px;
+    width: 280px;
+    min-height: 100vh;
+    height: auto;
+    overflow: visible;
+    background-color: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+.conquistas-layout > .sidebar > a:first-child {
+    flex-shrink: 0;
+}
+
+.conquistas-layout > .sidebar > hr {
+    width: 100%;
+    border-color: var(--cor-borda);
+}
+
+.conquistas-layout > .sidebar .nav-link {
+    color: var(--cor-texto) !important;
+}
+
+.conquistas-layout > .sidebar .nav-link:hover:not(.active) {
+    background-color: var(--cor-borda);
+}
+
+.conquistas-layout > .sidebar .nav-link.active {
+    background-color: var(--cor-secundaria) !important;
+    color: var(--cor-sobre-secundaria) !important;
+}
+
+.conquistas-layout > .sidebar .nav-link svg {
+    vertical-align: -0.125em;
+}
+
+.conquistas-layout > .sidebar .dropdown-menu {
+    background-color: var(--cor-superficie);
+}
+
+.conquistas-layout > .sidebar .dropdown-item {
+    color: var(--cor-texto);
+}
+
+.conquistas-layout > .sidebar .dropdown-item:hover {
+    background-color: var(--cor-borda);
+    color: var(--cor-texto);
+}
+
+.conquistas-layout > .sidebar .dropdown-divider {
+    border-color: var(--cor-borda);
+}
+
+.dashboard-card {
+    min-width: 0;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.75rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+.grid-principal {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    align-items: start;
+    gap: 1.5rem;
+}
+
+.painel {
+    min-width: 0;
+    padding: 1.25rem;
+}
+
+.painel-cabecalho {
+    margin-bottom: 1.5rem;
+}
+
+.painel-cabecalho p,
+.cabecalho-listagem p {
+    font-size: 0.875rem;
+    line-height: 1.6;
+}
+
+.badge-area {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 50rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+    white-space: nowrap;
+}
+
+#formConquista {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+}
+
+.campo {
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    min-width: 0;
+}
+
+.campo .form-label,
+.campo > label {
+    margin-bottom: 0;
+    color: var(--cor-texto);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.conquistas-conteudo .form-control,
+.conquistas-conteudo .form-select {
+    min-width: 0;
+    border-color: var(--cor-borda);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.conquistas-conteudo .form-control:focus,
+.conquistas-conteudo .form-select:focus {
+    border-color: var(--cor-secundaria);
+    box-shadow: 0 0 0 0.2rem
+        color-mix(in srgb, var(--cor-secundaria) 25%, transparent);
+}
+
+.conquistas-conteudo .form-control::placeholder {
+    color: #94a3b8;
+    opacity: 0.8;
+}
+
+.conquistas-conteudo .form-select option {
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+.campo textarea.form-control {
+    min-height: 100px;
+    resize: vertical;
+}
+
+.campo small {
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.campo-icone {
+    padding: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.75rem;
+    background: var(--cor-fundo);
+}
+
+.rotulo {
+    color: var(--cor-texto);
+    font-size: 0.875rem;
+    font-weight: 600;
+}
+
+.icone-selecionado {
+    display: flex;
+    align-items: center;
+    gap: 0.875rem;
+    padding: 0.75rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.625rem;
+    background: var(--cor-superficie);
+}
+
+.preview-icone {
+    display: flex;
+    flex: 0 0 56px;
+    align-items: center;
+    justify-content: center;
+    width: 56px;
+    height: 56px;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.625rem;
+    background: var(--cor-fundo);
+    font-size: 1.8rem;
+}
+
+.preview-icone img {
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.info-icone {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    min-width: 0;
+}
+
+.info-icone strong {
+    color: var(--cor-texto);
+    font-size: 0.9rem;
+}
+
+.info-icone small {
+    color: #94a3b8;
+    font-size: 0.75rem;
+}
+
+.categorias-icones {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.categoria-icone {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.75rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.375rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+    transition: background-color 0.15s ease;
+}
+
+.categoria-icone:hover {
+    background: var(--cor-borda);
+}
+
+.categoria-icone.ativo,
+.categoria-icone.ativa {
+    border-color: var(--cor-secundaria);
+    background: var(--cor-secundaria);
+    color: var(--cor-sobre-secundaria);
+}
+
+.galeria-icones {
+    display: grid;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.galeria-icones[hidden] {
+    display: none !important;
+}
+
+.opcao-icone {
+    display: flex;
+    min-width: 0;
+    min-height: 76px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    padding: 0.5rem 0.25rem;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    transition:
+        border-color 0.15s ease,
+        background-color 0.15s ease;
+}
+
+.opcao-icone:hover {
+    border-color: var(--cor-secundaria);
+    background: var(--cor-fundo);
+}
+
+.opcao-icone.selecionado {
+    border-color: var(--cor-secundaria);
+    background: color-mix(
+        in srgb,
+        var(--cor-secundaria) 20%,
+        var(--cor-superficie)
+    );
+    box-shadow: inset 0 0 0 1px var(--cor-secundaria);
+}
+
+.visual-icone {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    font-size: 1.5rem;
+}
+
+.visual-icone img {
+    width: 26px;
+    height: 26px;
+    object-fit: contain;
+}
+
+.nome-icone {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+    color: inherit;
+    font-size: 0.65rem;
+    line-height: 1.25;
+    text-align: center;
+}
+
+.ajuda-icone {
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    line-height: 1.5;
+}
+
+.requisitos {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.75rem;
+    background: var(--cor-fundo);
+}
+
+.requisitos h6 {
+    margin: 0;
+    color: var(--cor-texto);
+}
+
+.requisitos h6 i {
+    color: var(--cor-secundaria);
+}
+
+.requisitos > p {
+    margin: -0.5rem 0 0;
+}
+
+.linha-campos {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1rem;
+}
+
+.resumo-requisito {
+    padding: 0.75rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+    font-size: 0.8rem;
+    line-height: 1.6;
+}
+
+.botoes-formulario {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.conquistas-conteudo .btn-primary {
+    --bs-btn-bg: var(--cor-secundaria);
+    --bs-btn-border-color: var(--cor-secundaria);
+    --bs-btn-color: var(--cor-sobre-secundaria);
+
+    --bs-btn-hover-bg: var(--cor-secundaria-hover);
+    --bs-btn-hover-border-color: var(--cor-secundaria-hover);
+    --bs-btn-hover-color: var(--cor-sobre-secundaria);
+}
+
+.conquistas-conteudo .btn-outline-secondary {
+    --bs-btn-color: var(--cor-texto);
+    --bs-btn-border-color: var(--cor-borda);
+    --bs-btn-hover-bg: var(--cor-borda);
+    --bs-btn-hover-border-color: var(--cor-borda);
+    --bs-btn-hover-color: var(--cor-texto);
+}
+
+#botaoCancelar[hidden] {
+    display: none !important;
+}
+
+.cabecalho-listagem {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+}
+
+.cabecalho-listagem p {
+    margin-bottom: 0;
+}
+
+.contador {
+    flex-shrink: 0;
+    padding: 0.4rem 0.6rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.filtros {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.lista-conquistas {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+    min-width: 0;
+}
+
+.card-conquista {
+    display: grid;
+    grid-template-columns: 52px minmax(0, 1fr);
+    align-items: start;
+    gap: 0.6rem 0.875rem;
+    min-width: 0;
+    padding: 1rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.75rem;
+    background: var(--cor-superficie);
+    color: var(--cor-texto);
+}
+
+.card-conquista:hover {
+    border-color: var(--cor-secundaria);
+}
+
+.icone-conquista {
+    display: flex;
+    grid-column: 1;
+    grid-row: 1 / span 3;
+    align-items: center;
+    justify-content: center;
+    width: 52px;
+    height: 52px;
+    overflow: hidden;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.625rem;
+    background: var(--cor-fundo);
+    font-size: 1.6rem;
+}
+
+.icone-conquista img {
+    width: 30px;
+    height: 30px;
+    object-fit: contain;
+}
+
+.card-conquista h3 {
+    grid-column: 2;
+    margin: 0;
+    color: var(--cor-texto);
+    font-size: 0.95rem;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.card-conquista p {
+    grid-column: 2;
+    margin: 0;
+    color: #94a3b8;
+    font-size: 0.8rem;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+.card-conquista .detalhe-requisito {
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+    padding: 0.625rem 0.75rem;
+    border: 1px solid var(--cor-borda);
+    border-radius: 0.5rem;
+    background: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-size: 0.75rem;
+}
+
+.card-conquista .botoes-formulario {
+    grid-column: 1 / -1;
+    margin-top: 0.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid var(--cor-borda);
+}
+
+.card-conquista .btn {
+    font-size: 0.8rem;
+}
+
+.mensagem:empty {
+    display: none;
+}
+
+.mensagem.sucesso {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #198754;
+    border-radius: 0.5rem;
+    background: color-mix(
+        in srgb,
+        #198754 15%,
+        var(--cor-superficie)
+    );
+    color: #75d9a5;
+}
+
+.mensagem.erro {
+    margin-bottom: 1rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid #dc3545;
+    border-radius: 0.5rem;
+    background: color-mix(
+        in srgb,
+        #dc3545 12%,
+        var(--cor-superficie)
+    );
+    color: #ff929b;
+}
+
+@media (max-width: 1200px) {
+    .grid-principal {
+        grid-template-columns: minmax(0, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .conquistas-layout {
+        flex-direction: column;
+    }
+
+    .conquistas-layout > .sidebar {
+        flex: 0 0 auto;
+        width: 100%;
+        min-height: auto;
+    }
+
+    .conquistas-conteudo {
+        min-height: auto;
+        padding: 1.25rem !important;
+    }
+
+    .linha-campos {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .galeria-icones {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .cabecalho-listagem {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 420px) {
+    .conquistas-conteudo {
+        padding: 1rem !important;
+    }
+
+    .painel {
+        padding: 1rem;
+    }
+
+    .campo-icone {
+        padding: 0.75rem;
+    }
+
+    .galeria-icones {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .card-conquista {
+        grid-template-columns: 44px minmax(0, 1fr);
+        padding: 0.75rem;
+    }
+
+    .icone-conquista {
+        width: 44px;
+        height: 44px;
+        font-size: 1.35rem;
+    }
+
+    .contador {
+        white-space: normal;
+    }
+}

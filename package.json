@@ -1,12 +1,10 @@
 {
-  "name": "ti2-template-2026-2",
+  "name": "quorbe",
   "version": "1.0.0",
-  "description": "Plataforma Quorbe com servidor Express integrado para páginas, autenticação, dados e loja de cosméticos.",
-  "main": "",
+  "description": "Plataforma Quorbe com servidor Express, autenticação e loja de cosméticos.",
   "scripts": {
     "start": "node ./codigo/public/assets/js/servidor.js"
   },
-  "keywords": [],
   "author": "Ciência da Computação - PUC Minas",
   "license": "ISC",
   "dependencies": {
