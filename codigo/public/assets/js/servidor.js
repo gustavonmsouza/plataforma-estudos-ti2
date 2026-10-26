@@ -13,6 +13,9 @@ app.use(express.json({ limit: "8mb" }));
 
 // Não exponha o código-fonte do servidor pela pasta pública.
 app.get("/assets/js/servidor.js", (req, res) => res.sendStatus(404));
+app.get(["/loja.html", "/loja_aluno.html"], (req, res) => res.redirect("/aluno/loja.html"));
+app.get("/loja_professor.html", (req, res) => res.redirect("/professor/loja.html"));
+
 app.use(express.static(pastaPublica));
 
 const pastaFotosCosmeticos = path.join(
@@ -1029,7 +1032,8 @@ app.use(async (req, res, next) => {
 
 app.listen(PORTA, () => {
     console.log(`Quorbe disponível em http://localhost:${PORTA}/`);
-    console.log(`Loja de cosméticos: http://localhost:${PORTA}/loja.html`);
+    console.log(`Loja Aluno: http://localhost:${PORTA}/aluno/loja.html`);
+    console.log(`Loja Professor: http://localhost:${PORTA}/professor/loja.html`);
     console.log(`API da loja: http://localhost:${PORTA}/api/dados`);
     console.log(`Banco de dados: ${caminhoDB}`);
 });

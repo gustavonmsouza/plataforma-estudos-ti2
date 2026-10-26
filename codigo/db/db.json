@@ -273,6 +273,12 @@
       "usuarioId": 3,
       "conquistaId": 3,
       "completou": true
+    },
+    {
+      "id": 6,
+      "usuarioId": 1,
+      "conquistaId": 3,
+      "completou": true
     }
   ]
 }
